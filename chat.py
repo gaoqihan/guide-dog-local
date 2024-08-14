@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     These parameters can be configured with environment variables.
     """
 
-    openai_api_key: str = "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"
-    azure_speech_key: str = "5b7b62bee61049379fa71d24516dd52a"
+    openai_api_key: str = ""
+    azure_speech_key: str = ""
 
     azure_speech_region: str = "eastus"
 
