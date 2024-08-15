@@ -39,7 +39,7 @@ class CommandNode:
                     return child
         return None
     
-    def remove_child(self,command,recursive=False):
+    def remove_child(self,command,recursive=True):
         if recursive:
             for child in self.children:
                 if child.command == command:
