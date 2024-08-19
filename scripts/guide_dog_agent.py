@@ -5,9 +5,12 @@ import json
 from vocode import getenv
 from vocode.turn_based.agent.base_agent import BaseAgent
 import re
-#import rospy
-#from std_msgs.msg import String
 
+import rospy
+from guide_dog_chat.srv import PublishQuestTree, PublishQuestTreeRequest, PublishQuestTreeResponse
+from guide_dog_chat.srv import PublishTaskTree, PublishTaskTreeRequest, PublishTaskTreeResponse
+
+from std_msgs.msg import String
 
 class GuideDogGPTAgent(BaseAgent):
     def __init__(
@@ -42,111 +45,124 @@ class GuideDogGPTAgent(BaseAgent):
         2. The JSON message should contain the following keys:\
             - "speak_to_user": a string that will be spoken to the user.\
             - "speak_to_public": a string that will be spoken to the public.\
-            - "task_tree_augment": a string that will be used to augment the task tree.\
-            - "call_module": a string that will be used to call the module.\
+            - "quest_tree_augment": a string that will be used to augment the quest tree.\
+            - "action code": a section of python code to complete current task.\
         3. When the response is not applicable, the value of the key should be an empty string.\
         
-        TASK TREE AUGMENT:\
-            The task tree is a tree structure that represents the tasks that the you and the uswer need to perform.\
-            The task tree contains an current task, which is the task you should currently working on.\
-            Following are the methods that you can use to augment the task tree:\
-                1. "add_child(<task>)": this method will add the task to the task tree.\
-                2. "remove_child(<task>)": this method will remove the task from the task tree.\
+        TREE AUGMENT:\
+            There is a trees that you need to manage and augment:\
+               quest tree: the quest tree is a tree structure that represents the high level tasks that the you and the user need to perform.\
+                    such as "going to somewhere" or "buy something"\
+
+                             
+            The tree contains an current task, in the quest tree it is the task you should currently working on. in the current task tree, it is the current action you are taking.\
+
+                    
+            
+            When you write <task> if there's a symbol "'", use "`" instead, for example, "David's Tea" should be replaced with David`s tea.\ 
+            Following are the methods that you can use to augment the quest tree, you must strictly follow the format, interms of argument when you answer:\
+                1. "add_child(<task>)": this method will add the task to the quest tree.\
+                2. "remove_child(<task>)": this method will remove the task from the quest tree.\
                 3. "set_current_task(<task>)": this method will set the current task to the specified task.\
-                4. "get_child(<task>,recursive=True)": this method will return the task from the task tree.\
-                5. "print_tree()": this method will print the task tree.\
+                4. "get_child(<task>,recursive=True)": this method will return the task from the quest tree.\
+                5. "print_tree()": this method will print the quest tree.\
                 6. "add_child_to_node(<task>,<node>)": this method will add sub-task to a task.\
-            when you are given a complex task, always break it down into smaller tasks and add them to the task tree,\
-                in form of sub-tasks.\
+            when you are given a complex task, always break it down into smaller tasks and add them to the quest tree,\
+                in form of sub-tasks.\            
                 
+        ACTION CODE:
+                action_code is a section of python code that represents the low script of the current tasks you need to perform to assist the user,\
+                
+                    You need to generate the action code based on the current task tree.\
+                    Use comment to indicate the sub-tasks of the current task, all the function calls must be pre-defined api listed in MODULES or built-in python functions.\            
+                When a task is set as current task in quest tree, you must break it down into smaller sub-tasks and add them to the ACTION CODE. Then you must break\
+                the sub-tasks into basic actions APIs you can do using the modules, and generate the action code. The code is in Python3. You can use logics such as "if","while", "for" etc.\
         MODULES:\ 
-        following are the modules that you can call:\
+        following are the modules that you can use:\
             1. "go_to(<location>)": this module will help the user navigate to the specified location.\
-            2. "describe(<object>)": this module will help the user understand the object.\
-            3. "find(<object>)": this module will help the user find the object.\
-            4. "read(<object>)": this module will help the user read the text on a certain object.\
-            5. "describe_enrivonment(<direction:;front,back,left, right>)": this module will help the user understand the environment.\
-            6. "get_map_info(<location>)": this module will help the user understand the map of the location.\
+            2. "describe(<object>)": this module will describe a certain object, to provide the user with more, especially visual information, to the user\
+            3. "find(<object>)": you will look around and find a required object. This module will help the user find the object.\
+            4. "read(<object>)": you will read the text on a requested object, to help the user understand the text on th object.\
+            5. "describe_enrivonment(<direction:;front,back,left, right>)": you will describe the entire environment captured using your front/side/back camera to the user.\
+            6. "get_map_info(<location>)": this module will help the user understand the map of the location. this module can be used for you to get information from the map as well\
+            7. "wait_for_condition(<condition>)": this module allows you to keep checking using camera whether a condition is met, you will not move untill a condition is met.\
+            8. "speaking_to_public(<message>)": this module will allow you to speak to the public, you must get approval from the user before using this module.\
+            9. "speaking_to_user(<message>)": this module will allow you to speak to the user.\
+            10. "check_condition(<condition>)": this module will check if a condition is met, and return the condition.\
         EXAMPLES:\
         1. If the user says: "please help me find the black book", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I will help you find the book.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "[add_task('find book'),set_current_task('find_book')",\
+                "quest_tree_augment": "[add_task('find book');set_current_task('find_book')]",\
                 "call_module": "find("find the black book")"\
             }\
         2. If the user says: "please help me read the sign", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I will help you read the sign.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "[add_task('read sign'),set_current_task('read_sign')",\
-                "call_module": "read("read the sign")"\
+                "quest_tree_augment": "[add_task('read sign');set_current_task('read_sign')]",\
+                "call_module": "[read("read the sign")]"\
             }\
         3. If the user says: "please help me go to the park", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I will help you go to the Punggol park.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "[add_task('go to Punggol park'),set_current_task('go_to_park')",\
-                "call_module": "go_to("Ounggol park")"\
+                "quest_tree_augment": "[add_task('go to Punggol park');set_current_task('go_to_park')]",\
+                "call_module": "[go_to("Ounggol park")]"\
             }\
         4. If the user says: "please help me describe the painting", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I will help you describe the painting.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "[add_task('describe painting'),set_current_task('describe_painting')",\
-                "call_module": "describe("the painting")"\
+                "quest_tree_augment": "[add_task('describe painting');set_current_task('describe_painting')].",\
+                "call_module": "[describe("the painting")]"\
             }\
         5. If the user says: "I don't need to go to the washroom anymore", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "Okay I understand, removing the task 'go to washroom'.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "[remove_task('go to washroom')",\
+                "quest_tree_augment": "[remove_task('go to washroom')]",\
                 "call_module": ""\
             }\
         6. If the user says: "Why are you stopping?", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I am stopping because there's obstacle infront of me, i'll describe them to you.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "",\
-                "call_module": "describe_environment('front')"\
+                "quest_tree_augment": "",\
+                "call_module": "[describe_environment('front')]"\
             }\
         7. If the user says: "I am lost, where are we?", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "Don't worry, I will help you by providing map information of surrounding.",\
                 "speak_to_public": "",\
-                "task_tree_augment": "",\
-                "call_module": "get_map_info('where are we')"\
+                "quest_tree_augment": "",\
+                "call_module": "[get_map_info('where are we')]"\
             }\
         8. If the user says: "Please tell the crowd to clear a way for me", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "I understand, here is what I am about to say to the crowd: 'Please clear a way for us, thank you very much', is it okay?",\
                 "speak_to_public": "",\
-                "task_tree_augment": "",\
+                "quest_tree_augment": "",\
                 "call_module": ""\
             }\
                 if the user response is "yes", you can respond with the following JSON message:\
                 {\
                     "speak_to_user": "I will tell the crowd to clear a way for us.",\
                     "speak_to_public": "Please clear a way for us, thank you very much",\
-                    "task_tree_augment": "",\
+                    "quest_tree_augment": "",\
                     "call_module": ""\
                 }\
                 if the user response is "no", you can respond with the following JSON message:\
                 {\
                     "speak_to_user": "I will not tell the crowd to clear a way for us.",\
                     "speak_to_public": "",\
-                    "task_tree_augment": "",\
+                    "quest_tree_augment": "",\
                     "call_module": ""\
                 }\
         
-        
-        
         """
-        
-        #rospy.init_node('guide_dog_gpt_agent', anonymous=True)
-        #rospy.Subscriber("task_tree", String, self.task_tree_callback)
 
-        
         
         self.model_name = model_name
         self.messages: List[Any] = [
@@ -159,14 +175,21 @@ class GuideDogGPTAgent(BaseAgent):
                 "content": initial_message,
             },
         ]
-    #def task_tree_callback(self, msg: String):
-    #    self.task_tree=json.loads(msg.data)
+        rospy.init_node('chat_backend_client_node')
+        self.chat_content_pub=rospy.Publisher("/chat_backend_server", String,queue_size=1)
+
 
     def respond(self, human_input: str):
+        quest_tree=call_publish_quest_tree()
+        quest_tree_prompt="The quest tree is: "+quest_tree
+        task_tree=call_publish_task_tree()
+        task_tree_prompt="The current task tree is: "+task_tree
+        
+        
         self.messages.append(
             {
                 "role": "user",
-                "content": human_input,
+                "content": human_input + quest_tree_prompt + task_tree_prompt,
             }
         )
         response = self.client.chat.completions.create(
@@ -187,9 +210,30 @@ class GuideDogGPTAgent(BaseAgent):
             content = match.group(1)
             #print(extracted_string)
         else:
-            print("No string found")        
-        content_dict = json.loads(content)
-        return content_dict
+            print("No string found")
+        #content_dict = json.loads(content)
+        self.chat_content_pub.publish(content)       
 
         
         
+        return content
+
+        
+def call_publish_quest_tree():
+    rospy.wait_for_service('publish_quest_tree')
+    try:
+        publish_quest_tree = rospy.ServiceProxy('publish_quest_tree', PublishQuestTree)
+        response = publish_quest_tree(PublishQuestTreeRequest())
+        return response.tree
+    except rospy.ServiceException as e:
+        rospy.logerr("Service call failed: %s", e)
+        return ""
+def call_publish_task_tree():
+    rospy.wait_for_service('publish_task_tree')
+    try:
+        publish_task_tree = rospy.ServiceProxy('publish_task_tree', PublishTaskTree)
+        response = publish_task_tree(PublishTaskTreeRequest())
+        return response.tree
+    except rospy.ServiceException as e:
+        rospy.logerr("Service call failed: %s", e)
+        return ""

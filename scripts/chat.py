@@ -7,6 +7,11 @@ from vocode.turn_based.transcriber.whisper_transcriber import WhisperTranscriber
 from vocode.turn_based.turn_based_conversation import TurnBasedConversation
 from guide_dog_agent import GuideDogGPTAgent
 from TurnBasedConversationPlus import TurnBasedConversationPlus
+
+from dotenv import load_dotenv
+
+
+
 class Settings(BaseSettings):
     """
     Settings for the turn-based conversation quickstart.
@@ -22,10 +27,15 @@ class Settings(BaseSettings):
     # ex: "OPENAI_API_KEY=my_key" will set openai_api_key over the default above
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
+load_dotenv()
 
 settings = Settings()
 
 if __name__ == "__main__":
+            
+    
+
+        
     (
         microphone_input,
         speaker_output,
@@ -39,7 +49,7 @@ if __name__ == "__main__":
         transcriber=WhisperTranscriber(api_key=settings.openai_api_key),
         agent=GuideDogGPTAgent(
             system_prompt="",
-            initial_message="Hello! I am your robot guide dog. How can I help you today?",
+            initial_message="Hello!",
             api_key=settings.openai_api_key,
         ),
         synthesizer=AzureSynthesizer(
@@ -49,11 +59,13 @@ if __name__ == "__main__":
         ),
     )
     print("Starting conversation. Press Ctrl+C to exit.")
+    ### TBD cahnge this to listen to topic /ButtonPressed
+    
     while True:
         try:
             input("Press enter to start recording...")
             conversation.start_speech()
             input("Press enter to end recording...")
-            conversation.end_speech_and_respond()
+            agent_response=conversation.end_speech_and_respond()
         except KeyboardInterrupt:
             break
