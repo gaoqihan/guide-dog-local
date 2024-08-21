@@ -4,6 +4,7 @@ class QuestNode:
         self.parent = parent
         root=root
         self.children = []
+        self.note=""
         
     def print_tree(self,level=0):
         print("-"*level +">"+ self.command)

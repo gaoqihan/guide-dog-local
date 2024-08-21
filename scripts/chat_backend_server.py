@@ -11,7 +11,11 @@ import json
 from quest_tree import QuestNode, RootNode
 from guide_dog_chat.srv import PublishQuestTree, PublishQuestTreeResponse,PublishTaskTree,PublishTaskTreeResponse
 
-
+def clean_json(code):
+    # Remove markdown code block delimiters
+    code = code.replace('```json', '')
+    code = code.replace('```', '')
+    return code.strip()
 
 class ChatBackend:
     def __init__(self):
@@ -33,6 +37,7 @@ class ChatBackend:
         self.function_processing(response)
 
     def function_processing(self, response):
+        response = clean_json(response)
         response = json.loads(response)
         print(response)
         if response["speak_to_user"]:
@@ -42,8 +47,8 @@ class ChatBackend:
         if response["quest_tree_augment"]:
             print(response["quest_tree_augment"])
             self.execute_tree_function_list(response["quest_tree_augment"])
-        if response["call_module"]:
-            print(response["call_module"])
+        if response["action_code"]:
+            print(response["action_code"])
         print("quest tree")
         self.quest_tree.print_tree()
         print("task tree")

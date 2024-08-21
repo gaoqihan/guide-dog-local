@@ -14,6 +14,11 @@ logger.add("turn_based_conversation.log", rotation="1 MB")  # Log to a file with
 #logger.add(sys.stdout, level="INFO")  # Log to the console
 
 
+def clean_json(code):
+    # Remove markdown code block delimiters
+    code = code.replace('```json', '')
+    code = code.replace('```', '')
+    return code.strip()
 
 class TurnBasedConversationPlus(TurnBasedConversation):
 
@@ -22,7 +27,8 @@ class TurnBasedConversationPlus(TurnBasedConversation):
         human_input = self.transcriber.transcribe(self.input_device.end_listening())
         logger.info(f"TranscriptionPlus: {human_input}")
         agent_response = self.agent.respond(human_input)
-        agent_response_dict=json.loads(agent_response)
+        
+        agent_response_dict=json.loads(clean_json(agent_response))
         
         speak_to_user = agent_response_dict["speak_to_user"]
         
