@@ -259,14 +259,11 @@ class GuideDogGPTAgent(BaseAgent):
     def respond(self, human_input: str):
         quest_tree=call_publish_quest_tree()
         quest_tree_prompt="The quest tree is: "+quest_tree
-        task_tree=call_publish_task_tree()
-        task_tree_prompt="The current task tree is: "+task_tree
-        
         
         self.messages.append(
             {
                 "role": "user",
-                "content": human_input + quest_tree_prompt + task_tree_prompt,
+                "content": human_input + quest_tree_prompt,
             }
         )
         response = self.client.chat.completions.create(
@@ -310,12 +307,4 @@ def call_publish_quest_tree():
     except rospy.ServiceException as e:
         rospy.logerr("Service call failed: %s", e)
         return ""
-def call_publish_task_tree():
-    rospy.wait_for_service('publish_task_tree')
-    try:
-        publish_task_tree = rospy.ServiceProxy('publish_task_tree', PublishTaskTree)
-        response = publish_task_tree(PublishTaskTreeRequest())
-        return response.tree
-    except rospy.ServiceException as e:
-        rospy.logerr("Service call failed: %s", e)
-        return ""
+

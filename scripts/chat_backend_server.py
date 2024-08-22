@@ -38,8 +38,7 @@ def execute_code(filename='generated_code.py'):
 
 class ChatBackend:
     def __init__(self):
-        self.quest_tree = RootNode("root")
-        self.current_task_tree= RootNode("root")
+        global quest_tree
         
         rospy.init_node('chat_backend_server_node', anonymous=True)
         rospy.Subscriber('/chat_backend_server', String, self.callback)
@@ -47,8 +46,6 @@ class ChatBackend:
         rospy.Publisher('/chat_backend_server/quest_tree', String, queue_size=1)
         rospy.Publisher('/chat_backend_server/curent_task_tree', String, queue_size=1)
         rospy.Service('publish_quest_tree', PublishQuestTree, self.handle_srv_quest_tree)
-        rospy.Service('publish_task_tree', PublishTaskTree, self.handle_srv_task_tree)
-
         
 
     def callback(self, msg):
@@ -71,7 +68,7 @@ class ChatBackend:
         if response["action_code"]:
             print(response["action_code"])
         print("quest tree")
-        self.quest_tree.print_tree()
+        quest_tree.print_tree()
         save_code_to_file(response["action_code"])
         execute_code()
             
@@ -81,25 +78,21 @@ class ChatBackend:
         
         for function_call in function_calls:
             # Use eval to execute each function call
-            eval(f'self.quest_tree.{function_call.strip()}')
-        print(self.quest_tree)
+            eval(f'quest_tree.{function_call.strip()}')
+        print(quest_tree)
 
     def handle_srv_quest_tree(self,req):
-        quest_tree_str = self.quest_tree.get_tree_string()
+        quest_tree_str = quest_tree.get_tree_string()
         print("publishing quest tree")
         return PublishQuestTreeResponse(quest_tree_str)
     
-    def handle_srv_task_tree(self,req):
-        current_task_tree_str = self.current_task_tree.get_tree_string()
-        print("publishing task tree")
-        return PublishTaskTreeResponse(current_task_tree_str)
-
 
 
      
 
 if __name__ == '__main__':
     try:
+        quest_tree = RootNode("root")
         ChatBackend()
         rospy.spin()
     except rospy.ROSInterruptException:

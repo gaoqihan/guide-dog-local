@@ -146,3 +146,19 @@ def switch_mode(mode:str)->int:
     '''
     print(f"Switching mode to {mode}")
     return 0
+
+def set_current_task(task:str)->None:
+    global quest_tree
+    quest_tree.set_current_task(task)
+    pass
+
+def remove_child(command:str,recursive:bool=True)->None:
+    global quest_tree
+    quest_tree.remove_child(command,recursive)
+    pass
+
+def add_child(command:str,parent:str=None)->None:
+    global quest_tree
+    quest_tree.add_child(command,parent)
+    pass
+
