@@ -16,7 +16,10 @@ class QuestNode:
         for child in self.children:
             tree_str += child.get_tree_string(level + 1)
         return tree_str            
-    def add_child(self,command):
+    def add_child(self,command,node_command=None):
+        if node_command:
+            self.add_child_to_node(command,node_command)
+            return
         child_node=self.create_child(command)
         self.children.append(child_node)
         child_node.parent = self

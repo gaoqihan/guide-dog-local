@@ -10,12 +10,31 @@ from std_msgs.msg import String
 import json
 from quest_tree import QuestNode, RootNode
 from guide_dog_chat.srv import PublishQuestTree, PublishQuestTreeResponse,PublishTaskTree,PublishTaskTreeResponse
+from modules import *
 
 def clean_json(code):
     # Remove markdown code block delimiters
     code = code.replace('```json', '')
     code = code.replace('```', '')
     return code.strip()
+
+def clean_code(code):
+    # Remove markdown code block delimiters
+    code = code.replace('```python', '')
+    code = code.replace('```', '')
+    code=code.replace('\\n','\n')
+    
+    return code.strip()
+
+def save_code_to_file(code, filename='generated_code.py'):
+    with open(filename, 'w') as file:
+        file.write(code)
+
+def execute_code(filename='generated_code.py'):
+    with open(filename, 'r') as file:
+        code = file.read()
+    exec(code, globals())
+
 
 class ChatBackend:
     def __init__(self):
@@ -37,9 +56,11 @@ class ChatBackend:
         self.function_processing(response)
 
     def function_processing(self, response):
+
+        print(response)
+
         response = clean_json(response)
         response = json.loads(response)
-        print(response)
         if response["speak_to_user"]:
             print(response["speak_to_user"])
         if response["speak_to_public"]:
@@ -51,8 +72,8 @@ class ChatBackend:
             print(response["action_code"])
         print("quest tree")
         self.quest_tree.print_tree()
-        print("task tree")
-        self.current_task_tree.print_tree()
+        save_code_to_file(response["action_code"])
+        execute_code()
             
     def execute_tree_function_list(self, function_list_str):
         # Remove the square brackets and split the string into individual function calls
@@ -72,7 +93,10 @@ class ChatBackend:
         current_task_tree_str = self.current_task_tree.get_tree_string()
         print("publishing task tree")
         return PublishTaskTreeResponse(current_task_tree_str)
-        
+
+
+
+     
 
 if __name__ == '__main__':
     try:

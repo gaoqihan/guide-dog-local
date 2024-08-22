@@ -19,8 +19,8 @@ class GuideDogGPTAgent(BaseAgent):
         api_key: Optional[str] = None,
         initial_message: Optional[str] = None,
         model_name: str = "gpt-4o",
-        temperature: float = 0.7,
-        max_tokens: int = 100,
+        temperature: float = 0,
+        max_tokens: int = 2000,
     ):
         super().__init__(initial_message=initial_message)
         api_key = getenv("OPENAI_API_KEY", api_key)
@@ -65,7 +65,6 @@ class GuideDogGPTAgent(BaseAgent):
             The tree contains an current task, in the quest tree it is the task you should currently working on. in the current task tree, it is the current action you are taking.\
 
                     
-            
             When you write <task> if there's a symbol "'", use "`" instead, for example, "David's Tea" should be replaced with David`s tea.\ 
             Following are the methods that you can use to augment the quest tree, you must strictly follow the format, interms of argument when you answer:\
                 1. "add_child(<task>)": this method will add the task to the quest tree.\
@@ -75,7 +74,10 @@ class GuideDogGPTAgent(BaseAgent):
                 5. "print_tree()": this method will print the quest tree.\
                 6. "add_child_to_node(<task>,<node>)": this method will add sub-task to a task.\
             when you are given a complex task, always break it down into smaller tasks and add them to the quest tree,\
-                in form of sub-tasks.\            
+                in form of sub-tasks.\       
+            when a task is completed, you must remove it from the quest tree.\
+            when a task is a sub-task of another task, you must add it as a child of the parent task by using add_child_to_node\
+                     
                 
         ACTION CODE:
                 action_code is a section of python code that represents the low script of the current tasks you need to perform to assist the user,\
@@ -84,6 +86,7 @@ class GuideDogGPTAgent(BaseAgent):
                     Use comment to indicate the sub-tasks of the current task, all the function calls must be pre-defined api listed in MODULES or built-in python functions.\            
                 When a task is set as current task in quest tree, you must break it down into smaller sub-tasks and add them to the ACTION CODE. Then you must break\
                 the sub-tasks into basic actions APIs you can do using the modules, and generate the action code. The code is in Python3. You can use logics such as "if","while", "for" etc.\
+                Keep the code as a single line string, and use "backslash n" to separate the lines, "backslash t" to indent.\
         MODULES:\ 
         following are the modules that you can use:\
             1. "go_to(<location>):None": this module will help the user navigate to the specified location.\
@@ -131,8 +134,7 @@ class GuideDogGPTAgent(BaseAgent):
                 "speak_to_user": "I will help you read the sign.",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[add_task('read sign');set_current_task('read_sign')]",\
-                "action_code": "sign_content=read("read the sign")\n\
-                    speak_to_user(sign_content)"\
+                "action_code": "sign_content=read("read the sign")\nspeak_to_user(sign_content)"\
             }\
         3. If the user says: "please help me go to the park", you can respond with the following JSON message:\
             {\
@@ -146,9 +148,7 @@ class GuideDogGPTAgent(BaseAgent):
                 "speak_to_user": "I will help you describe the painting.",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[add_task('describe painting');set_current_task('describe_painting')].",\
-                "action_code": "painting_description=describe("the painting")\n\
-                    speaking_to_user(painting_description)\n\
-                "\
+                "action_code": "painting_description=describe("the painting")speak_to_user(painting_description)"\
             }\
         5. If the user says: "I don't need to go to the washroom anymore", you can respond with the following JSON message:\
             {\
@@ -163,8 +163,7 @@ class GuideDogGPTAgent(BaseAgent):
                 "speak_to_public": "",\
                 "quest_tree_augment": "",\
                 "action_code": "front_obstacles=describe_environment('front')\n\
-                    speaking_to_user(front_obstacles)\n\
-                    "\
+                speak_to_user(front_obstacles)\n"\
             }\
         7. If the user says: "I am lost, where are we?", you can respond with the following JSON message:\
             {\
@@ -172,7 +171,7 @@ class GuideDogGPTAgent(BaseAgent):
                 "speak_to_public": "",\
                 "quest_tree_augment": "",\
                 "action_code": "current_position=get_map_info('current position')\n\
-                    speak_to_user(current_position)"\
+                speak_to_user(current_position)"\
             }\
         8. If the user says: "Please tell the crowd to clear a way for me", you can respond with the following JSON message:\
             {\
@@ -200,13 +199,8 @@ class GuideDogGPTAgent(BaseAgent):
             {\
                 "speak_to_user": "Let me check the map for you.",\
                 "speak_to_public": "",\
-                "quest_tree_augment": "add_child('fix user hungry')",\
-                "action_code": "
- 
-                map_info=get_map_info('food')\n\
-                speak_to_user(map_info)\n\
-                
-                "\
+                "quest_tree_augment": "[add_child('fix user hungry')]",\
+                "action_code": "map_info=get_map_info('food')\nspeak_to_user(map_info)\n"\
             }\
             Assume the map_info is a string that syas: "there is a food court near by that serves a variety of food, would you like to go there?"\
             User response is "yes", you can respond with the following JSON message:\
@@ -214,62 +208,35 @@ class GuideDogGPTAgent(BaseAgent):
                 "speak_to_user": "Let's go to the food court.",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[add_child('go to food court','fix user hungry');set_current_task('go to food court')]]",\
-                "action_code": "\
-                go_to('food court')\n\
-                "\
+                "action_code": "go_to('food court')\n"\
             }\
             When we arrive at the food court, you can respond with the following JSON message:\
             {\
                 "speak_to_user": "We have arrived at the food court.I am looking for what food stores are available here",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[remove_child('go to food court')]",\
-                "action_code": "\
-                envionment_note=''\n\
-                environment_note,related_objects_list=look_around_and_find_related_objects(description=True,find='buy food')"\n\
-                communication_to_user="I found the following food stores: "\n\
-                for object in related_objects_list:\n\
-                    communication_to_user+=object[0]+" in the "+object[1]+" direction\n\
-                \
-                speak_to_user(communication_to_user)\n\
-                \
-                "\
+                "action_code": "envionment_note=''\nenvironment_note,related_objects_list=look_around_and_find_related_objects(description=True,find='buy food')"\ncommunication_to_user="I found the following food stores: "\nfor object in related_objects_list:\n\\tcommunication_to_user+=object[0]+" in the "+object[1]+" direction\nspeak_to_user(communication_to_user)\n"\
             }\
             for example the user say: "I want to go to the sushi store", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "OK, lets go to the sushi store",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[add_child('go to sushi store','fix user hungry');set_current_task('go to sushi store')]",\  
-                "action_code": "\
-                go_to('sushi store')\n\
-                speak_to_user('We have arrived at the sushi store, you can order now')\n\
-                switch_mode('avoid')\
-                "
+                "action_code": "go_to('sushi store')\nspeak_to_user('We have arrived at the sushi store, you can order now')\nswitch_mode('avoid')"
             }\
             When the user says:"ok, i got the sushi, lets go find an empty chair to sit, you can respond with the following JSON message:\
             {\
                 "speak_to_user": "OK, lets go find an empty chair to sit",\
                 "speak_to_public": "",\
-                "quest_tree_augment": "[remove_child('go to sushi store'),add_child('find empty chair','fix user hungry');set_current_task('find empty chair')]",\
-                "action_code": "\
-                chair_3d_position=find_object_3d('empty chair')\n\
-                speak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\n\
-                switch_mode('guide')\n\
-                go_to('empty chair')\n\
-                speak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\n\
-                switch_mode('avoid')\n\
-                wait_for_condition('user sit')\n\
-                switch_mode('sleep')\n\
-                "
+                "quest_tree_augment": "[remove_child('go to sushi store');add_child('find empty chair','fix user hungry');set_current_task('find empty chair')]",\
+                "action_code": "chair_3d_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\n\switch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')\n"
             }\
             when the user says:"ok, i am done with the meal,let's go to my office now", you can respond with the following JSON message:\
             {\
                 "speak_to_user": "OK, lets go to your office.",
                 "speak_to_public": "",
-                "quest_tree_augment": "[remove_child('fix user hungry'),add_child('go to office');set_current_task('go to office')]",
-                "action_code": "\
-                switch_mode('guide')\n\
-                go_to('office')\n\
-                "
+                "quest_tree_augment": "[remove_child('fix user hungry');add_child('go to office');set_current_task('go to office')]",
+                "action_code": "switch_mode('guide')\ngo_to('office')"
             }\
         """
 
@@ -305,6 +272,8 @@ class GuideDogGPTAgent(BaseAgent):
         response = self.client.chat.completions.create(
             model=self.model_name,
             messages=self.messages,
+            max_tokens=2000,
+            temperature=0,
         )
         content = response.choices[0].message.content
         self.messages.append(
@@ -313,11 +282,14 @@ class GuideDogGPTAgent(BaseAgent):
                 "content": content,
             }
         )
-        print(content)
+        #print(repr(content)[1:-1])
         # Extract the string enclosed by first '{' and last '}'
-        match = re.search(r"\{(.*)\}", content)
-        if match:
-            content = match.group(1)
+        # Find the first '{' and the last '}'
+        start_index = content.find('{')
+        end_index = content.rfind('}')
+        if start_index != -1 and end_index != -1:
+            content = content[start_index:end_index + 1]
+
             #print(extracted_string)
         else:
             print("No string found")
