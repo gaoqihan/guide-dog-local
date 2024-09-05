@@ -23,8 +23,15 @@ def clean_code(code):
     code = code.replace('```python', '')
     code = code.replace('```', '')
     code=code.replace('\\n','\n')
+    code=code.replace('\\t','\t')
+    code=code.replace('\\\n','\n')
+    code=code.replace('\\\t','\t')
     
     return code.strip()
+def clean_string(string):
+    string=string.replace("'","\'")
+
+    return string
 
 def save_code_to_file(code, filename='generated_code.py'):
     with open(filename, 'w') as file:
@@ -42,9 +49,7 @@ class ChatBackend:
         
         rospy.init_node('chat_backend_server_node', anonymous=True)
         rospy.Subscriber('/chat_backend_server', String, self.callback)
-        
-        rospy.Publisher('/chat_backend_server/quest_tree', String, queue_size=1)
-        rospy.Publisher('/chat_backend_server/curent_task_tree', String, queue_size=1)
+
         rospy.Service('publish_quest_tree', PublishQuestTree, self.handle_srv_quest_tree)
         
 
@@ -67,9 +72,11 @@ class ChatBackend:
             self.execute_tree_function_list(response["quest_tree_augment"])
         if response["action_code"]:
             print(response["action_code"])
+        response["action_code"] = f'speak_to_user("{response["speak_to_user"]}")\n{response["action_code"]}'
+
         print("quest tree")
         quest_tree.print_tree()
-        save_code_to_file(response["action_code"])
+        save_code_to_file(clean_code(response["action_code"]))
         execute_code()
             
     def execute_tree_function_list(self, function_list_str):

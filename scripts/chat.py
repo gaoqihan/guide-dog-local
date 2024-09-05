@@ -9,8 +9,8 @@ from guide_dog_agent import GuideDogGPTAgent
 from TurnBasedConversationPlus import TurnBasedConversationPlus
 
 from dotenv import load_dotenv
-
-
+import rospy
+from std_msgs.msg import String, Int8
 
 class Settings(BaseSettings):
     """
@@ -32,8 +32,9 @@ load_dotenv()
 settings = Settings()
 
 if __name__ == "__main__":
-            
-    
+    mode="testing"
+    rospy.init_node('chat_backend_client_node')
+
 
         
     (
@@ -60,12 +61,41 @@ if __name__ == "__main__":
     )
     print("Starting conversation. Press Ctrl+C to exit.")
     ### TBD cahnge this to listen to topic /ButtonPressed
+    def speak_to_user_callback(data):
+        conversation.say_things(data.data)
     
-    while True:
-        try:
-            input("Press enter to start recording...")
-            conversation.start_speech()
-            input("Press enter to end recording...")
-            agent_response=conversation.end_speech_and_respond()
-        except KeyboardInterrupt:
-            break
+    rospy.Subscriber('/speak_to_user', String, speak_to_user_callback)
+    
+    
+    #looping
+    if mode=="testing":
+        while True:
+            try:
+                user_input=input("Press enter to start recording...")
+                if user_input=="":
+                    conversation.start_speech()
+                input("Press enter to end recording...")
+                agent_response=conversation.end_speech_and_respond(user_input)
+                
+            except KeyboardInterrupt:
+                break
+    elif mode=="onboard":
+        recording=False
+        last_pressed_time=rospy.get_time()
+        def button_pressed_callback(data):
+            time_lapsed=rospy.get_time()-last_pressed_time
+            if recording==False:
+                print("Starting recording")
+                last_pressed_time=rospy.get_time()
+                conversation.start_speech()
+                recording=True
+            elif recording==True and time_lapsed<0.5:
+                last_pressed_time=rospy.get_time()
+                pass
+            else:
+                print("Ending recording")
+                agent_response=conversation.end_speech_and_respond()
+                recording=False
+                rospy.Publisher('/speak_to_user', String, queue_size=10).publish(agent_response)
+        rospy.Subscriber('/ButtonPress', Int8, button_pressed_callback,queue_size=1)
+        rospy.spin()

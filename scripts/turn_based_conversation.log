@@ -229,3 +229,1940 @@
     "quest_tree_augment": "[add_child('go to supermarket');add_child_to_node('buy bag of chips','go to supermarket');add_child_to_node('go to counter and pay','go to supermarket');add_child('go to washroom and wash hands');add_child('go home');set_current_task('go to supermarket')]",
     "call_module": "go_to('supermarket')"
 }
+2024-08-21 13:43:16.224 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: Hi robot, please take me to the washroom, then let's go to supermarket, buy some apple and buy a watermelon, then take me to a restaurant and I'll order some duck with rice, then we go home.
+2024-08-21 13:43:19.154 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:31 - Agent responsePlus: {
+    "speak_to_user": "I will help you with all these tasks. Let's first go to the washroom.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to washroom');set_current_task('go to washroom');add_child_to_node('go to supermarket afterward', 'go to washroom');add_child_to_node('buy some apple', 'go to supermarket afterward');add_child_to_node('buy a watermelon', 'go to supermarket afterward');add_child_to_node('go to restaurant', 'go to supermarket afterward');add_child_to_node('order some duck with rice', 'go to restaurant');add_child_to_node('go home', 'go to restaurant')]",
+    "action_code": "go_to('washroom')"
+}
+2024-08-21 13:48:53.090 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: Hi robot, let's go to a GameStop and buy the latest Assassin's Creed game, then we also need to buy a laptop, then we go to a supermarket and buy some watermelon, then we can go home.
+2024-08-21 13:48:55.337 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:31 - Agent responsePlus: {
+    "speak_to_user": "Sure, I will help you with that. We'll start by going to GameStop first.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to GameStop');add_child('buy latest Assassin`s Creed game');add_child('buy a laptop');add_child('go to supermarket');add_child('buy watermelon');add_child('go home');set_current_task('go to GameStop')]",
+    "action_code": "# Task breakdown for going to GameStop\ngo_to('GameStop')"
+}
+2024-08-21 18:19:19.122 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: I'll see you next time. 
+2024-08-21 18:19:43.225 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: hello robot let's go to a supermarket and I wonder where is the closest supermarket to us
+2024-08-21 18:28:19.359 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: Hi robot, take me to a supermarket and let's figure out what we need to buy later but tell me where the supermarket is and then let's go to the closest supermarket to us.
+2024-08-21 18:32:08.624 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:23 - TranscriptionPlus: Thank you.
+2024-08-21 18:33:10.538 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: They will take me to the well find find the closest supermarket in the In the map and then then let's see take me to that supermarket later. Yeah, find that first in the map Yeah, find that
+2024-08-22 16:54:52.946 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: AeroBot, tell me what's the weather today?
+2024-08-22 16:54:54.887 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I'm sorry, but I don't have the capability to check the weather. Is there anything else I can help you with?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+```
+2024-08-22 16:55:06.211 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, let's go to the door
+2024-08-22 16:55:07.983 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I will help you go to the door.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to door');set_current_task('go to door')]",
+    "action_code": "go_to('door')"
+}
+```
+2024-08-22 16:56:20.617 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, let's go to a theater and then find a good movie.
+2024-08-22 16:56:22.194 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I will help you go to a theater and then find a good movie.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to theater');add_child('find movie');set_current_task('go to theater')]",
+    "action_code": "go_to('theater')"
+}
+```
+2024-08-22 16:56:45.772 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Let's go to the store market, and then let's, yeah, no, no, no, no, forget about it, let's still go to the theater.
+2024-08-22 16:56:46.959 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I understand, we will still go to the theater.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "go_to('theater')"
+}
+```
+2024-08-22 16:56:58.386 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: My robot, we are at the theater.
+2024-08-22 16:57:00.775 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "We have arrived at the theater. Now, let's find a good movie.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to theater');set_current_task('find movie')]",
+    "action_code": "look_around_and_find_related_objects(find='movie')"
+}
+```
+2024-08-22 16:57:25.489 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Now, in front of you, there are a shelf of contents, 10 different movies. Can you read each one of their titles to me?
+2024-08-22 17:11:16.357 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, can you take me to arts theatre?
+2024-08-22 17:11:17.908 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I will help you go to the arts theatre.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to arts theatre');set_current_task('go to arts theatre')]",
+    "action_code": "go_to('arts theatre')"
+}
+```
+2024-08-22 17:11:46.281 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: So, right now we're at the art theater, and in front of you, there are three signs standing next to each other. And then, can you please read out the content on the three signs for me?
+2024-08-22 17:18:13.935 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, there are three signs in front of you, standing next to each other, and can you read the content on the three signs for me one by one?
+2024-08-22 17:20:52.115 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello. There is an apple, a banana, and a watermelon in front of you. Please describe each one of them one by one and tell me about it.
+2024-08-22 17:20:54.287 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Sure, I will help you describe the apple, banana, and watermelon.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe apple');add_child('describe banana');add_child('describe watermelon');set_current_task('describe apple')]",
+    "action_code": "apple_description = describe('apple')\nspeaking_to_user(apple_description)\n"
+}
+2024-08-22 17:21:06.027 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Let's go to a theater.
+2024-08-22 17:21:07.554 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you go to the theater.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to theater');set_current_task('go to theater')]",
+    "action_code": "go_to('theater')"
+}
+2024-08-22 17:21:24.480 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: okay we're at the theater and in front of you there are 10 different posters and please read out each one of them and tell me your title on that
+2024-08-22 17:29:12.098 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi Robo, let's go to a theater.
+2024-08-22 17:29:13.892 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you go to the theater.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to theater');set_current_task('go to theater')]",
+    "action_code": "go_to('theater')"
+}
+2024-08-22 17:29:25.932 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Now we're at the theater and there are 10 posters in front of you on the wall read each one of them to me
+2024-08-22 17:32:09.458 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: There are 10 different objects in front of you. Describe each one of them to me.
+2024-08-22 17:32:11.224 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will describe the objects in front of you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe_objects');set_current_task('describe_objects')]",
+    "action_code": "environment_note, related_objects_list = look_around_and_find_related_objects(description=True, find='')\\nspeaking_to_user(environment_note)"
+}
+2024-08-22 17:32:21.814 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Uh, now let's go to a theater.
+2024-08-22 17:32:23.251 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go to the theater.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to theater');set_current_task('go to theater')]",
+    "action_code": "go_to('theater')"
+}
+2024-08-22 17:32:47.461 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Whereas at the theater, there are 20 different posters in front of you, read each one of them to me, read the context, the content on the poster to me.
+2024-08-22 17:34:16.340 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello, we are at a theater. There are 28 different posters in front of you. Can you read each one of their text on it?
+2024-08-22 17:35:26.544 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Robot, there are 20 different posters in front of you. Can you read each one of them's text on it?
+2024-08-22 17:45:47.114 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, there are 10 posters in front of you, each has a line of sentence on it, read each one of them to me.
+2024-08-22 17:46:36.750 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, there are 10 posters in front of you, each one has a sentence on it. Please read each one of them to me.
+2024-08-22 17:48:09.111 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, so there are 10 posters in front of me, each has a sentence on it, please read each one of them to me.
+2024-08-22 17:56:20.468 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Thank you.
+2024-08-22 17:56:39.403 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: There are 10 posters in front of me and there's one sentence on each one of them. Please read all the sentences to me, one by one.
+2024-08-22 17:59:11.162 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: You
+2024-08-22 17:59:25.559 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Everyone, there are 10 different paintings in front of me, each one of them have a sentence on it, please read all of them to me.
+2024-08-22 18:01:35.103 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey robot, there are 10 paintings in front of us, each one of them has a sentence on it, please read all of them one by one.
+2024-08-22 18:01:37.309 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will start reading the sentences on each of the paintings in front of us, one by one.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('read sentences on paintings');set_current_task('read sentences on paintings')]",
+    "action_code": "for i in range(1, 11):\n    painting_position = find_object_3d('painting ' + str(i))\n    sentence = read(painting_position)\n    speaking_to_user(sentence)\n"
+}
+2024-08-22 18:02:00.350 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Robot, now in front of you, you see three different kind of apple. Please describe them one by one.
+2024-08-22 18:02:02.360 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will describe the three different kinds of apples in front of us, one by one.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe apples');set_current_task('describe apples')]",
+    "action_code": "apple_descriptions, apples_positions_list = look_around_and_find_related_objects(find='apple')\nfor apple in apples_positions_list:\n    apple_description = describe(apple[0])\n    speaking_to_user(apple_description)\n"
+}
+2024-08-22 18:02:21.100 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay robot, now let's go take a look at the museum that's closest to us.
+2024-08-22 18:02:22.597 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go to the museum that's closest to us.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to nearest museum');set_current_task('go to nearest museum')]",
+    "action_code": "go_to('nearest museum')"
+}
+2024-08-22 18:02:29.456 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Now we're at the museum
+2024-08-22 18:02:30.663 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the museum.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to nearest museum')]",
+    "action_code": ""
+}
+2024-08-22 18:02:38.965 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Can you look around and tell me where to go?
+2024-08-22 18:02:41.244 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will look around and provide some information on where to go.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('look around and describe museum')]",
+    "action_code": "museum_description, related_objects_list = look_around_and_find_related_objects(description=True)\nspeaking_to_user(museum_description)\ncommunication_to_user = 'I found the following points of interest: '\nfor obj in related_objects_list:\n\tcommunication_to_user += obj[0] + ' in the ' + str(obj[1]) + ' direction. '\nspeaking_to_user(communication_to_user)\n"
+}
+2024-08-22 18:03:08.412 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Oh, well, that sculpture looks totally nice, can we get closer and take a look at it, and would you please describe it to me when we get closer?
+2024-08-22 18:03:10.991 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's get closer to the sculpture and I will describe it to you when we get there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe sculpture');set_current_task('describe sculpture')]",
+    "action_code": "sculpture_position = find_object_3d('sculpture')\ngo_to(sculpture_position)\nsculpture_description = describe('sculpture')\nspeaking_to_user(sculpture_description)\n"
+}
+2024-08-22 18:03:26.546 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Now we're at the sculpture. Please describe it to me.
+2024-08-22 18:03:28.434 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We are now at the sculpture, I will describe it to you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('describe sculpture')]",
+    "action_code": "sculpture_description = describe('sculpture')\nspeaking_to_user(sculpture_description)\n"
+}
+2024-08-22 18:04:12.966 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: okay well now we see three different sculptures can we go to each one of them and describe each one of them to me
+2024-08-22 18:04:16.076 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's visit each of the three sculptures and I will describe each one of them to you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe three sculptures');set_current_task('describe three sculptures')]",
+    "action_code": "sculptures_positions_list = look_around_and_find_related_objects(find='sculpture')[1]\nfor sculpture in sculptures_positions_list:\n    go_to(sculpture[0])\n    sculpture_description = describe(sculpture[0])\n    speaking_to_user(sculpture_description)\n"
+}
+2024-08-22 18:04:33.561 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Nice, okay, okay. Bye
+2024-08-22 18:04:35.375 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Goodbye! If you need any assistance in the future, feel free to call me.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "switch_mode('sleep')"
+}
+2024-08-22 19:24:43.167 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: 💛💛
+2024-08-22 19:28:21.094 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey robot, can you take me to... take me to the zoo, take me to the zoo.
+2024-08-22 19:28:22.763 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you go to the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to zoo');set_current_task('go to zoo')]",
+    "action_code": "go_to('zoo')"
+}
+2024-08-22 19:28:51.693 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey, we're at the zoo now. Thanks for taking me here Hey, let's Let's make some plan for today. I think I wanna can you get some Info from the map and tell me what kind of animals are there in the zoo
+2024-08-22 19:28:53.378 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will gather information from the map to tell you what kind of animals are in the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('gather info about animals in the zoo');set_current_task('gather info about animals in the zoo')]",
+    "action_code": "animal_info=get_map_info('animals in zoo')\nspeak_to_user(animal_info)"
+}
+2024-08-22 19:30:03.654 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yo, hola mi amigo, can you take me to the zoo?
+2024-08-22 19:30:05.263 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Hello! I will help you go to the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to zoo');set_current_task('go to zoo')]",
+    "action_code": "go_to('zoo')"
+}
+2024-08-22 19:30:18.799 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay, we're at the zoo now. Can you take a look around the map and tell me what are there in the zoo?
+2024-08-22 19:35:45.947 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello, let's go to the zoo.
+2024-08-22 19:35:47.343 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you go to the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to zoo');set_current_task('go to zoo')]",
+    "action_code": "go_to('zoo')"
+}
+2024-08-22 19:35:59.116 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: We are at the zoo now. Can you please take a look around and tell me what kind of animals are there?
+2024-08-22 19:36:02.555 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the zoo. I will look around and tell you what kind of animals are here.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to zoo');add_child('look around for animals');set_current_task('look around for animals')]",
+    "action_code": "environment_description, animals_list = look_around_and_find_related_objects(description=True, find='animals')\nspeak_to_user(environment_description if environment_description else 'Here are the animals I found: ' + ', '.join([animal[0] for animal in animals_list]))"
+}
+2024-08-22 19:36:37.678 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: I see an apple and a tiger. Sorry, I didn't see an apple, sorry. I see a tiger, there's a lion, there's a penguin, and there is a butterfly house. Can we go visit each one of them, and when we get there, can you describe the place to me?
+2024-08-22 19:39:20.335 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello, say something that's really really long, like really really long. Say something that's one thousand words long.
+2024-08-22 19:39:22.032 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I apologize, but I am unable to provide such a long message. Is there anything specific you'd like to discuss or a task you'd like assistance with?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-22 19:39:55.419 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: okay there is a tiger house and there is a penguin house and there's a lion house and there is a bat cave yeah where are the zoo by the way and can you take me to each one of them go there and describe it and tell me about it and then after we visit all the house then we can go home
+2024-08-22 19:39:58.231 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you visit each animal house and then we can go home after. Let's start with the tiger house.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit animal houses');add_child('visit tiger house', 'visit animal houses');add_child('visit penguin house', 'visit animal houses');add_child('visit lion house', 'visit animal houses');add_child('visit bat cave', 'visit animal houses');add_child('go home')];set_current_task('visit tiger house')",
+    "action_code": "go_to('tiger house')\ndescription=describe('the tiger house')\nspeaking_to_user(description)"
+}
+2024-08-22 19:42:24.725 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: 
+2024-08-22 19:43:10.877 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello my friend, we're at the zoo at this moment and I see a tiger place, I see a penguin place, I see an art museum above the zoo, and I see a Ferra wheel, can we go to each one of the place and can you guide me in that place to have fun and describe what the place does and also do whatever the place is supposed to be doing.
+2024-08-22 19:43:13.262 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "Sure, I will guide you to each place at the zoo and describe them to you. We'll start with the tiger place, then move to the penguin place, followed by the art museum, and finally the Ferris wheel.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit tiger place');add_child('visit penguin place');add_child('visit art museum');add_child('visit Ferris wheel');set_current_task('visit tiger place')]",
+    "action_code": "go_to('tiger place')"
+}
+```
+2024-08-22 19:43:30.856 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey, we're at the tiger's place.
+2024-08-22 19:43:32.515 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "We have arrived at the tiger place. I will describe the area to you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "tiger_place_description=describe('tiger place')\nspeaking_to_user(tiger_place_description)"
+}
+```
+2024-08-22 19:44:10.752 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-22 19:45:00.159 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello, we're at a zoo, and in the zoo there's a jungle, there is a farewell, there is a roller coaster, there is a lion's cave, and there is a penguin visiting place. We also know that there is a spider cave, let's go to each one of them one by one, and when we get there, can you guide me around, and we have fun, and yeah, that's it.
+2024-08-22 19:45:02.610 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Sure, let's explore the zoo together! We will visit the jungle, farewell, roller coaster, lion's cave, penguin visiting place, and spider cave. I'll guide you around each place and ensure we have a great time.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit jungle');add_child('visit farewell');add_child('visit roller coaster');add_child('visit lion`s cave');add_child('visit penguin visiting place');add_child('visit spider cave');set_current_task('visit jungle')]",
+    "action_code": "go_to('jungle')"
+}
+2024-08-22 19:45:23.110 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: we are at the jungle
+2024-08-22 19:45:24.482 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the jungle. Let me look around and describe the place to you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('visit jungle')]",
+    "action_code": "jungle_description=describe('the jungle')\\nspeak_to_user(jungle_description)"
+}
+2024-08-22 19:50:59.529 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello my friend, we are at a zoo, and now in the zoo there's a canteen, there's a lion's cave, there's a spider's cave, and there's a little museum, and I want to visit the lion's cave first, but we're going to go through all of them together later, so can you just guide me to there and let's have fun?
+2024-08-22 19:51:02.043 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "I will guide you to the lion's cave. We will visit all the attractions together later.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit zoo attractions');add_child_to_node('go to canteen','visit zoo attractions');add_child_to_node('go to lion`s cave','visit zoo attractions');add_child_to_node('go to spider`s cave','visit zoo attractions');add_child_to_node('go to museum','visit zoo attractions');set_current_task('go to lion`s cave')]",
+    "action_code": "go_to('lion`s cave')"
+}
+```
+2024-08-22 19:51:13.294 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: we're at the lion's cave now
+2024-08-22 19:51:15.286 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "We have arrived at the lion's cave. Enjoy observing the lions! When you're ready, we can proceed to the next attraction.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to lion`s cave')]",
+    "action_code": ""
+}
+```
+2024-08-22 19:51:32.597 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay bro, I'm blind. So you gotta show me around and describe what's here for me.
+2024-08-22 19:51:34.571 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "Sure, I will describe the lion's cave for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe lion`s cave','visit zoo attractions');set_current_task('describe lion`s cave')]",
+    "action_code": "lion_cave_description=describe('lion`s cave')\nspeak_to_user(lion_cave_description)"
+}
+```
+2024-08-22 19:53:25.015 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: you
+2024-08-22 19:53:47.611 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: hey yo bro we are at coffee shop right now and I need to get a coffee
+2024-08-22 19:53:49.791 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "Sure, let me look around and find the coffee stores for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('get a coffee');set_current_task('get a coffee')]",
+    "action_code": "description,coffee_stores=look_around_and_find_related_objects(description=False,find='coffee')\ncommunication_to_user='I found the following coffee stores: '\nfor store in coffee_stores:\n\tcommunication_to_user+=store[0]+' in the '+str(store[1])+' direction\\n'\nspeak_to_user(communication_to_user)"
+}
+```
+2024-08-22 19:54:20.148 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yeah, let's go to the first coffee place, there seems to be a coffee over there, I think we need to go buy the coffee, so how are we going to go buy the coffee?
+2024-08-22 19:54:22.468 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: ```json
+{
+    "speak_to_user": "OK, let's go to the first coffee place and buy a coffee. I'll guide you there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to first coffee place','get a coffee');set_current_task('go to first coffee place')]",
+    "action_code": "first_coffee_place_direction=coffee_stores[0][1]\ngo_to(first_coffee_place_direction)\nspeak_to_user('We have arrived at the first coffee place. You can order your coffee now.')\nswitch_mode('avoid')"
+}
+```
+2024-08-22 19:54:45.878 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yeah, we have bought the coffee and now we find a place to sit down and enjoy our coffee.
+2024-08-22 19:57:06.358 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey yo bro, I need to get coffee. Can you find some coffee place nearby and guide me to get some coffee?
+2024-08-22 19:57:07.805 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Sure, let me find a coffee place nearby for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find coffee place');set_current_task('find coffee place')]",
+    "action_code": "map_info=get_map_info('coffee')\nspeak_to_user(map_info)"
+}
+2024-08-22 19:57:22.245 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yeah, apparently you found the coffee place. Nice. Let's go there.
+2024-08-22 19:57:23.936 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go to the coffee place.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to coffee place','find coffee place');set_current_task('go to coffee place')]",
+    "action_code": "go_to('coffee place')"
+}
+2024-08-22 19:57:58.895 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: You
+2024-08-22 19:58:17.609 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Oh man, I really need some coffee right now, I really need some coffee right now, can you take me to the closest coffee shop and buy some coffee?
+2024-08-22 19:58:19.029 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the closest coffee shop and get some coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('get coffee');set_current_task('get coffee')]",
+    "action_code": "map_info=get_map_info('coffee shop')\nspeak_to_user(map_info)"
+}
+2024-08-22 19:58:28.704 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: yeah you found it let's go
+2024-08-22 19:58:29.957 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go to the coffee shop.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to coffee shop','get coffee');set_current_task('go to coffee shop')]",
+    "action_code": "go_to('coffee shop')"
+}
+2024-08-22 19:58:47.007 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: okay we're at the coffee shop what I think we need to go go order it
+2024-08-22 19:58:48.515 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the coffee shop. Let's go order some coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to coffee shop'),add_child('order coffee','get coffee');set_current_task('order coffee')]",
+    "action_code": "speak_to_user('Please let me know what type of coffee you would like to order.')"
+}
+2024-08-22 20:01:59.098 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Thank you.
+2024-08-22 20:02:16.214 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello, my friend. I need some coffee
+2024-08-22 20:02:18.168 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find some coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find coffee');set_current_task('find coffee')]",
+    "action_code": "map_info=get_map_info('coffee')\nspeak_to_user(map_info)"
+}
+2024-08-22 20:02:26.957 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hey, uh, we're at this coffee shop. What do we do now?
+2024-08-22 20:02:29.834 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the coffee shop. I will look around to see what options are available.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('explore coffee shop','find coffee');set_current_task('explore coffee shop')]",
+    "action_code": "environment_note,related_objects_list=look_around_and_find_related_objects(description=True,find='coffee')\ncommunication_to_user='I found the following options: '\nfor object in related_objects_list:\n\tcommunication_to_user+=object[0]+' in the '+str(object[1])+' direction'\nspeak_to_user(communication_to_user)"
+}
+2024-08-22 20:02:41.736 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: I think we need to go to the counter and order something.
+2024-08-22 20:02:43.627 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "OK, let's go to the counter and order something.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to counter','find coffee');set_current_task('go to counter')]",
+    "action_code": "go_to('counter')\nspeak_to_user('We have arrived at the counter, you can place your order now.')"
+}
+2024-08-22 20:02:57.359 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: I have placed my order, let's go find somewhere I can sit and enjoy my coffee.
+2024-08-22 20:14:55.592 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Whoa, I need coffee. I need a lot of coffee, bro. I need coffee. Find me coffee. I need coffee
+2024-08-22 20:14:57.293 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find coffee');set_current_task('find coffee')]",
+    "action_code": "map_info=get_map_info('coffee')\nspeak_to_user(map_info)"
+}
+2024-08-22 20:15:06.160 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yeah, that's good. Let's go. Let's go
+2024-08-22 20:15:07.591 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go find some coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to coffee shop','find coffee');set_current_task('go to coffee shop')]",
+    "action_code": "go_to('coffee shop')"
+}
+2024-08-22 20:15:21.567 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: We're at the coffee place now, and what do we do next? We're at a Starbucks. What do we do? What do we do?
+2024-08-22 20:15:23.818 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at Starbucks. I will look around to see what options are available.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to coffee shop');add_child('explore coffee options','find coffee');set_current_task('explore coffee options')]",
+    "action_code": "environment_note,related_objects_list=look_around_and_find_related_objects(description=True,find='coffee menu')\ncommunication_to_user='I found the following options: '\nfor object in related_objects_list:\n\tcommunication_to_user+=object[0]+' in the '+str(object[1])+' direction'\nspeak_to_user(communication_to_user)"
+}
+2024-08-22 20:15:42.637 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: hmm yeah that slushy coffee slushy looks good take me to the counter and let's go buy it
+2024-08-22 20:15:44.511 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Okay, let's go to the counter and buy the coffee slushy.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to counter','find coffee');set_current_task('go to counter')]",
+    "action_code": "go_to('counter')\nspeak_to_user('We have arrived at the counter, you can order the coffee slushy now.')\nswitch_mode('avoid')"
+}
+2024-08-22 20:16:01.577 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yep, I ordered the slushie, let's go find somewhere nice to sit down and enjoy my coffee.
+2024-08-22 20:16:04.357 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Okay, let's go find a nice place to sit down and enjoy your coffee.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to counter');add_child('find seating','find coffee');set_current_task('find seating')]",
+    "action_code": "seating_position=find_object_3d('empty seat')\nspeak_to_user(f'I found an empty seat {seating_position[2]} meters from us, guiding you to the seat.')\nswitch_mode('guide')\ngo_to('empty seat')\nspeak_to_user('We have arrived at the empty seat, you can sit down and enjoy your coffee now.')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-22 20:16:30.511 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay, I'm down with the coffee. Let's go to a zoo.
+2024-08-22 20:16:32.647 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Okay, let's go to the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find coffee');add_child('go to zoo');set_current_task('go to zoo')]",
+    "action_code": "switch_mode('guide')\ngo_to('zoo')"
+}
+2024-08-22 20:16:53.960 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: We're at the zoo now. There's a lion place, there's a tiger place, and there's an elephant place. Let's go around and can you guide me around and also tell me about those places when we are there.
+2024-08-22 20:16:57.819 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the zoo. I will guide you around and tell you about the lion place, tiger place, and elephant place.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('explore zoo');add_child_to_node('visit lion place','explore zoo');add_child_to_node('visit tiger place','explore zoo');add_child_to_node('visit elephant place','explore zoo');set_current_task('visit lion place')]",
+    "action_code": "go_to('lion place')\nspeak_to_user('We have arrived at the lion place. Let me describe it to you.')\nlion_description=describe('lion place')\nspeak_to_user(lion_description)\nset_current_task('visit tiger place')\ngo_to('tiger place')\nspeak_to_user('We have arrived at the tiger place. Let me describe it to you.')\ntiger_description=describe('tiger place')\nspeak_to_user(tiger_description)\nset_current_task('visit elephant place')\ngo_to('elephant place')\nspeak_to_user('We have arrived at the elephant place. Let me describe it to you.')\nelephant_description=describe('elephant place')\nspeak_to_user(elephant_description)"
+}
+2024-08-22 20:26:05.740 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: You
+2024-08-22 20:26:40.024 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot. We're at the school building and I believe in the map there's a canteen. I'm kind of hungry. Can we go to the canteen?
+2024-08-22 20:26:41.672 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the canteen. Let me check the map for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('fix user hunger');add_child_to_node('find canteen', 'fix user hunger');set_current_task('find canteen')]",
+    "action_code": "map_info=get_map_info('canteen')\nspeak_to_user(map_info)"
+}
+2024-08-22 20:27:49.449 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-22 20:28:09.094 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, we're at school and apparently there's a canteen somewhere. I'm hungry, can we go get some food?
+2024-08-22 20:29:07.037 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi robot, we're at school and apparently there's a canteen somewhere. I'm pretty hungry, can you get some food?
+2024-08-22 20:29:08.581 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find some food. Let me check the map for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('fix user hunger');set_current_task('fix user hunger')]",
+    "action_code": "map_info=get_map_info('canteen')\nspeak_to_user(map_info)"
+}
+2024-08-22 20:29:17.610 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Well, let's go to the canteen now.
+2024-08-22 20:29:19.534 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Let's go to the canteen.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to canteen','fix user hunger');set_current_task('go to canteen')]",
+    "action_code": "go_to('canteen')"
+}
+2024-08-22 20:29:31.467 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Oh, bro, tell me what kind of food we have here.
+2024-08-22 20:29:34.049 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "We have arrived at the canteen. I am looking for what food stores are available here.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to canteen');add_child('explore canteen','fix user hunger');set_current_task('explore canteen')]",
+    "action_code": "environment_note, related_objects_list = look_around_and_find_related_objects(description=True, find='food')\ncommunication_to_user = environment_note + ' I found the following food stores: '\nfor obj in related_objects_list:\n\tcommunication_to_user += obj[0] + ' in the ' + str(obj[1]) + ' direction. '\nspeak_to_user(communication_to_user)"
+}
+2024-08-22 20:29:54.559 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: oh good nice okay then I like the I like the Korean barbecue let's go to the Korean barbecue place
+2024-08-22 20:29:56.399 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "OK, let's go to the Korean barbecue place.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to Korean barbecue','fix user hunger');set_current_task('go to Korean barbecue')]",
+    "action_code": "go_to('Korean barbecue')\nspeak_to_user('We have arrived at the Korean barbecue place, you can order now')\nswitch_mode('avoid')"
+}
+2024-08-22 20:30:19.756 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: I'm done ordering, can we move to somewhere nice to have the food, like can you find an empty table for me?
+2024-08-22 20:30:23.351 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "OK, let's go find an empty table to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('go to Korean barbecue');add_child('find empty table','fix user hunger');set_current_task('find empty table')]",
+    "action_code": "table_3d_position = find_object_3d('empty table')\nspeak_to_user(f'I found an empty table {table_3d_position[2]} meters from us, guiding you to the table.')\nswitch_mode('guide')\ngo_to('empty table')\nspeak_to_user('We have arrived at the empty table, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-22 20:30:51.337 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: cool okay okay all right let's sit down and I'm done eating my food let's go visit the zoo
+2024-08-22 20:30:53.124 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "OK, let's go visit the zoo.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('fix user hunger');add_child('visit zoo');set_current_task('visit zoo')]",
+    "action_code": "switch_mode('guide')\ngo_to('zoo')"
+}
+2024-08-22 20:31:14.568 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay, the zoo, there's a tiger place, a lion place, and there is a penguin place. Can we go to each one of them, and can you please describe each one of them to me?
+2024-08-22 20:31:17.172 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Sure, let's visit the tiger place first.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit tiger place','visit zoo');add_child('visit lion place','visit zoo');add_child('visit penguin place','visit zoo');set_current_task('visit tiger place')]",
+    "action_code": "go_to('tiger place')\nspeak_to_user('We have arrived at the tiger place. I will describe it to you.')\ntiger_description = describe('tiger place')\nspeak_to_user(tiger_description)"
+}
+2024-08-22 20:31:28.290 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: No, wait, actually I don't want to go to the tiger place first, I'll go to the penguin place first.
+2024-08-22 20:31:30.158 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Okay, let's go to the penguin place first.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('visit penguin place')]",
+    "action_code": "go_to('penguin place')\nspeak_to_user('We have arrived at the penguin place. I will describe it to you.')\npenguin_description = describe('penguin place')\nspeak_to_user(penguin_description)"
+}
+2024-08-22 20:31:46.512 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay, you know what, I need to go to the washroom right now. Let's go to the washroom before we go anywhere else.
+2024-08-22 20:31:47.920 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Sure, let's go to the washroom first.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to washroom','visit zoo');set_current_task('go to washroom')]",
+    "action_code": "go_to('washroom')"
+}
+2024-08-22 20:31:59.558 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: guide me through the whole process of using washroom.
+2024-08-22 20:32:04.694 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will guide you through the whole process of using the washroom.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('enter washroom', 'go to washroom');add_child_to_node('find empty stall', 'go to washroom');add_child_to_node('use stall', 'go to washroom');add_child_to_node('exit washroom', 'go to washroom');set_current_task('enter washroom')]",
+    "action_code": "speak_to_user('We have arrived at the washroom entrance. I will guide you inside.')\ngo_to('washroom entrance')\nspeak_to_user('We are now inside the washroom. I will find an empty stall for you.')\nstall_3d_position = find_object_3d('empty stall')\nspeak_to_user(f'I found an empty stall {stall_3d_position[2]} meters from us, guiding you to the stall.')\nswitch_mode('guide')\ngo_to('empty stall')\nspeak_to_user('We have arrived at the empty stall. You can enter and use the stall now.')\nswitch_mode('avoid')\nwait_for_condition('user done')\nspeak_to_user('You have finished using the stall. I will guide you to the exit.')\nswitch_mode('guide')\ngo_to('washroom exit')\nspeak_to_user('We have exited the washroom.')\nswitch_mode('avoid')"
+}
+2024-08-22 20:32:33.173 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yo, yo forgot to take me to wash my hand. I need to wash my hand
+2024-08-22 20:32:36.954 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I apologize for that. Let's go wash your hands.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('wash hands', 'go to washroom');set_current_task('wash hands')]",
+    "action_code": "sink_3d_position = find_object_3d('sink')\nspeak_to_user(f'I found a sink {sink_3d_position[2]} meters from us, guiding you to the sink.')\nswitch_mode('guide')\ngo_to('sink')\nspeak_to_user('We have arrived at the sink. You can wash your hands now.')\nswitch_mode('avoid')\nwait_for_condition('user done washing hands')\nspeak_to_user('You have finished washing your hands. I will guide you to the exit.')\nswitch_mode('guide')\ngo_to('washroom exit')\nspeak_to_user('We have exited the washroom.')\nswitch_mode('avoid')"
+}
+2024-08-22 20:32:49.067 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Good work, good work, good work, bye bye.
+2024-08-22 20:32:50.388 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Thank you! Goodbye!",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "switch_mode('sleep')"
+}
+2024-08-22 20:32:56.748 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-23 15:06:43.063 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: hello well there is a car in front of me can you tell me what color the car is
+2024-08-23 15:06:44.503 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you identify the color of the car.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('identify car color');set_current_task('identify car color')]",
+    "action_code": "car_description=describe('car')\nspeak_to_user(car_description)"
+}
+2024-08-23 15:07:10.686 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Tell me again, tell me again.
+2024-08-23 15:07:12.169 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you identify the color of the car.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "car_description=describe('car')\nspeak_to_user(car_description)"
+}
+2024-08-23 15:14:52.330 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-23 15:19:09.193 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hello Hi
+2024-08-23 15:19:10.353 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Hello! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:19:21.797 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi, uh, can you, uh, tell me something about, uh, today's, uh, weather?
+2024-08-23 15:19:23.453 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I don't have the capability to provide weather information. Is there anything else I can assist you with?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:19:57.171 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Hi, can you tell me something about the Red Bull?
+2024-08-23 15:19:58.681 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you describe the Red Bull.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe Red Bull');set_current_task('describe Red Bull')]",
+    "action_code": "red_bull_description=describe('Red Bull')\nspeaking_to_user(red_bull_description)"
+}
+2024-08-23 15:20:11.793 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Okay, if Red Bull is good for health, then why do people not drink it as water?
+2024-08-23 15:20:14.821 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Red Bull contains caffeine and other ingredients that can provide a temporary energy boost, but it is not recommended to drink it as water due to potential health risks from excessive consumption.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:20:46.191 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Tell me something about Wukong.
+2024-08-23 15:20:48.104 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you describe Wukong.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe Wukong');set_current_task('describe Wukong')]",
+    "action_code": "wukong_description=describe('Wukong')\nspeaking_to_user(wukong_description)"
+}
+2024-08-23 15:20:57.044 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: Yeah, just tell me about it.
+2024-08-23 15:20:59.121 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Wukong, also known as the Monkey King, is a legendary figure from Chinese mythology. He is a main character in the classic Chinese novel 'Journey to the West'. Wukong is known for his incredible strength, agility, and magical abilities, including the power to transform into various forms and to travel vast distances quickly. He wields a magical staff that can change size and is a master of martial arts.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:21:31.566 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: What is the cloud, the name of the cloud that Wukong writes?
+2024-08-23 15:21:33.226 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "The cloud that Wukong rides is called the 'Somersault Cloud' or 'Jindou Yun' in Chinese. It allows him to travel great distances in a single leap.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:21:46.934 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: What about that staff that he used?
+2024-08-23 15:21:48.789 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Wukong's staff is called the 'Ruyi Jingu Bang' or 'Golden-Hooped Rod'. It is a magical weapon that can change its size, multiply itself, and fight according to the will of its master. The staff can grow as tall as the heavens or shrink to the size of a needle, making it easy for Wukong to carry it behind his ear when not in use.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:22:15.016 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: The game Black Myth Wukong, tell me about it.
+2024-08-23 15:22:16.786 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you describe the game Black Myth: Wukong.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('describe Black Myth: Wukong');set_current_task('describe Black Myth: Wukong')]",
+    "action_code": "black_myth_wukong_description=describe('Black Myth: Wukong')\nspeaking_to_user(black_myth_wukong_description)"
+}
+2024-08-23 15:22:23.800 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: 
+2024-08-23 15:22:25.812 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Black Myth: Wukong is an upcoming action role-playing game developed by Chinese indie developer Game Science. The game is based on the classic Chinese novel 'Journey to the West' and features the legendary Monkey King, Sun Wukong, as the protagonist. Players will experience Wukong's journey, battling various mythical creatures and enemies using his iconic abilities and weapons, including the Ruyi Jingu Bang. The game has garnered significant attention for its stunning graphics, fluid combat mechanics, and faithful adaptation of the source material.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 15:23:01.802 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:28 - TranscriptionPlus: 
+2024-08-23 16:12:41.312 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, right now there are 10 posters in front of you. Read each one of them to me and describe their content.
+2024-08-23 16:12:43.326 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will read and describe the content of each poster in front of us.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('read and describe posters');set_current_task('read and describe posters')]",
+    "action_code": "for i in range(10):\\n\tposter_content = read(f'poster {i+1}')\\n\tdescription = describe(f'poster {i+1}')\\n\tspeak_to_user(f'Poster {i+1}: {poster_content}. Description: {description}')"
+}
+2024-08-23 16:15:04.763 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Right now we're in a museum, and I know there are three rooms, room A, room B and room C. Room A is displaying some modern art, and room B is displaying some sculptures. I have no idea what's in room C, but can you guide me through all these rooms, and when we're in the room, can you describe whatever is in there for me?
+2024-08-23 16:15:07.868 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will guide you through all the rooms in the museum and describe the contents of each room.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('visit museum rooms');add_child_to_node('visit room A','visit museum rooms');add_child_to_node('visit room B','visit museum rooms');add_child_to_node('visit room C','visit museum rooms');set_current_task('visit room A')]",
+    "action_code": "go_to('room A')\\nroom_a_description = describe_enrivonment('front')\\nspeak_to_user(f'We are in room A. {room_a_description}')\\nset_current_task('visit room B')\\ngo_to('room B')\\nroom_b_description = describe_enrivonment('front')\\nspeak_to_user(f'We are in room B. {room_b_description}')\\nset_current_task('visit room C')\\ngo_to('room C')\\nroom_c_description = describe_enrivonment('front')\\nspeak_to_user(f'We are in room C. {room_c_description}')"
+}
+2024-08-23 16:15:52.258 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: OK, now we are at room A. I can see a couple of different sculptures. Can you go through step by step, how are you going to guide me around that? I need you to just show me around and tell me everything about them.
+2024-08-23 16:15:54.619 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will guide you around room A and describe each sculpture to you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('describe sculptures in room A','visit room A');set_current_task('describe sculptures in room A')]",
+    "action_code": "sculptures_info, sculptures_list = look_around_and_find_related_objects(description=True, find='sculpture')\\nspeak_to_user(f'Room A contains the following sculptures: {sculptures_info}')\\nfor sculpture in sculptures_list:\\n\tsculpture_description = describe(sculpture[0])\\n\tspeak_to_user(f'{sculpture[0]}: {sculpture_description}')"
+}
+2024-08-23 16:16:42.454 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 咱们就是要去厕所
+2024-08-23 16:16:45.925 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "好的，我会带你去厕所。",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to restroom');set_current_task('go to restroom')]",
+    "action_code": "go_to('restroom')"
+}
+2024-08-23 16:17:13.121 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Okay, now we're at the washroom. I need your help. Just guiding me through the washroom, bro. I can't see, remember, I can't see, so guide me through the washroom.
+2024-08-23 16:17:18.206 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will guide you through the washroom step by step.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('guide through washroom','go to restroom');set_current_task('guide through washroom')]",
+    "action_code": "washroom_description = describe_enrivonment('front')\\nspeak_to_user(f'We are in the washroom. {washroom_description}')\\nobjects_info, objects_list = look_around_and_find_related_objects(description=False, find='sink, toilet, hand dryer')\\nfor obj in objects_list:\\n\tspeak_to_user(f'{obj[0]} is in the {obj[1]} direction.')"
+}
+2024-08-23 16:20:27.390 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Okay, guide me to the toilet first and after that I'm gonna go to the sink and then I'll use a hand dryer.
+2024-08-23 16:20:31.567 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will guide you to the toilet first, then to the sink, and finally to the hand dryer.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('go to toilet','guide through washroom');add_child_to_node('go to sink','guide through washroom');add_child_to_node('use hand dryer','guide through washroom');set_current_task('go to toilet')]",
+    "action_code": "toilet_position = find_object_3d('toilet')\\nspeak_to_user(f'The toilet is {toilet_position[2]} meters from us. Guiding you to the toilet.')\\ngo_to('toilet')\\nspeak_to_user('We have arrived at the toilet. You can use it now.')\\nset_current_task('go to sink')\\nsink_position = find_object_3d('sink')\\nspeak_to_user(f'The sink is {sink_position[2]} meters from us. Guiding you to the sink.')\\ngo_to('sink')\\nspeak_to_user('We have arrived at the sink. You can use it now.')\\nset_current_task('use hand dryer')\\nhand_dryer_position = find_object_3d('hand dryer')\\nspeak_to_user(f'The hand dryer is {hand_dryer_position[2]} meters from us. Guiding you to the hand dryer.')\\ngo_to('hand dryer')\\nspeak_to_user('We have arrived at the hand dryer. You can use it now.')"
+}
+2024-08-23 16:22:23.888 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-23 16:24:52.138 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 就是他的觀念
+2024-08-23 16:24:53.321 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "Hello! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 16:25:03.215 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-23 16:25:27.209 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: okay hi robot we're at the front of elevator can you guide me to use the elevator we need to go to the third floor
+2024-08-23 16:25:30.712 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will help you use the elevator to go to the third floor.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('use elevator');set_current_task('use elevator')]",
+    "action_code": "elevator_buttons_description=describe('elevator buttons')\\nspeak_to_user(elevator_buttons_description)\\nwait_for_condition('user presses the button')\\nspeak_to_user('Please press the button for the third floor.')\\nwait_for_condition('elevator arrives')\\nspeak_to_user('The elevator has arrived, guiding you inside.')\\ngo_to('inside elevator')\\nspeak_to_user('We are inside the elevator, please press the button for the third floor.')\\nwait_for_condition('elevator reaches third floor')\\nspeak_to_user('We have reached the third floor, guiding you out of the elevator.')\\ngo_to('outside elevator')\\nspeak_to_user('We are now on the third floor.')"
+}
+2024-08-23 17:08:26.259 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-23 17:09:01.015 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: hi robot I need you to guide me to an empty chair nearby please describe every single step you can take
+2024-08-23 17:09:03.357 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair nearby and guide you to it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-23 17:09:57.412 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-23 17:10:20.782 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, I need you to guide me to an empty chair. Can you please find an empty chair for me and guide me to it?
+2024-08-23 17:10:24.113 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair and guide you to it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-23 17:14:40.684 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Alright robot, guide me to an empty chair and tell me every single step you're gonna take.
+2024-08-23 17:14:43.730 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I will guide you to an empty chair and describe every step I take.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-23 17:23:36.812 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, tell me about today's weather.
+2024-08-23 17:23:38.373 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:35 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I cannot provide weather information. You might want to use a weather app or ask someone nearby.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:25:39.893 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: You
+2024-08-23 17:25:50.683 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi, how are you doing today?
+2024-08-23 17:25:52.456 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hello! I'm here and ready to assist you. How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:26:36.566 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: How are you doing today?
+2024-08-23 17:26:37.979 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm just a program, so I don't have feelings, but I'm here and ready to help you! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:27:19.947 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: How are you doing today?
+2024-08-23 17:27:21.072 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm here and ready to assist you! How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:29:11.773 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hey, how are you doing today?
+2024-08-23 17:29:13.041 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hello! I'm here and ready to assist you. How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:31:02.063 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hey, how are you doing today?
+2024-08-23 17:31:03.228 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hi there! I'm here and ready to assist you. How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:32:19.072 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hey, how are you doing today?
+2024-08-23 17:32:20.794 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hello! I'm here and ready to assist you. How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:33:36.233 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hey, how are you doing today?
+2024-08-23 17:33:37.669 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hi there! I'm here and ready to assist you. How can I help you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 17:34:34.360 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I need to find an empty chair and sit down
+2024-08-23 17:34:37.396 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit down.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-23 18:01:51.231 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-23 18:05:09.622 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: you
+2024-08-23 18:05:23.835 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello my friend, how do I look today?
+2024-08-23 18:05:25.308 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I cannot provide feedback on your appearance. Is there anything else I can assist you with?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 18:05:38.902 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, is there a person in front of you?
+2024-08-23 18:05:40.806 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Let me check if there is a person in front of us.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "front_obstacles=describe_environment('front')\nspeak_to_user(front_obstacles)"
+}
+2024-08-23 18:05:57.572 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, tell me what you're looking at right now.
+2024-08-23 18:05:59.810 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will describe the environment in front of us.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "front_description=describe_environment('front')\nspeak_to_user(front_description)"
+}
+2024-08-23 18:06:42.126 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, based on what you see, the person in front of you, is he wearing a red shirt or a black shirt?
+2024-08-23 18:06:44.961 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Let me check the color of the shirt the person in front of us is wearing.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "person_description=describe('person in front')\nspeak_to_user(person_description)"
+}
+2024-08-23 18:07:42.160 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: hi robot do you is there a photo being given to you at this point
+2024-08-23 18:07:45.401 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "No, I have not received any photo at this point. Is there anything else I can assist you with?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-23 18:07:55.964 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Thank you.
+2024-08-26 00:59:07.278 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, please find the ripest apple for me. There are like tons of apples in front of you.
+2024-08-26 00:59:10.274 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the ripest apple.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find ripest apple');set_current_task('find ripest apple')]",
+    "action_code": "apples=look_around_and_find_related_objects(find='apple')\\nripe_apple_position=find_object_3d('ripest apple')\\nspeak_to_user(f'The ripest apple is located at {ripe_apple_position[2]} meters from us.')"
+}
+2024-08-26 01:00:49.846 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: find me a black chair
+2024-08-26 01:00:52.811 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a black chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black chair');set_current_task('find black chair')]",
+    "action_code": "black_chair_position=find_object_3d('black chair')\\nspeak_to_user(f'The black chair is located at {black_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:14:58.589 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me a black empty chair.
+2024-08-26 01:15:02.559 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a black empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black empty chair');set_current_task('find black empty chair')]",
+    "action_code": "black_empty_chair_position=find_object_3d('black empty chair')\\nspeak_to_user(f'The black empty chair is located at {black_empty_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:18:01.363 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find a black empty chair.
+2024-08-26 01:18:05.636 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a black empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black empty chair');set_current_task('find black empty chair')]",
+    "action_code": "black_empty_chair_position=find_object_3d('black empty chair')\\nspeak_to_user(f'The black empty chair is located at {black_empty_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:18:34.350 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find a black empty chair.
+2024-08-26 01:18:38.179 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a black empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black empty chair');set_current_task('find black empty chair')]",
+    "action_code": "black_empty_chair_position=find_object_3d('black empty chair')\\nspeak_to_user(f'The black empty chair is located at {black_empty_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:20:01.984 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: My robot, help me find a black empty chair.
+2024-08-26 01:20:05.527 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I am already helping you find a black empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "black_empty_chair_position=find_object_3d('black empty chair')\\nspeak_to_user(f'The black empty chair is located at {black_empty_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:20:22.671 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the black empty chair.
+2024-08-26 01:20:27.833 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a black empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black empty chair');set_current_task('find black empty chair')]",
+    "action_code": "black_empty_chair_position=find_object_3d('black empty chair')\\nspeak_to_user(f'The black empty chair is located at {black_empty_chair_position[2]} meters from us.')"
+}
+2024-08-26 01:21:38.707 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me a roll of paper tissue.
+2024-08-26 01:21:42.611 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a roll of paper tissue.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find roll of paper tissue');set_current_task('find roll of paper tissue')]",
+    "action_code": "paper_tissue_position=find_object_3d('roll of paper tissue')\\nspeak_to_user(f'The roll of paper tissue is located at {paper_tissue_position[2]} meters from us.')"
+}
+2024-08-26 01:22:24.569 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: My robot find me a row of toilet paper.
+2024-08-26 01:22:28.319 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a row of toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find row of toilet paper');set_current_task('find row of toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('row of toilet paper')\\nspeak_to_user(f'The row of toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:28:48.711 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, I need to find the toilet paper.
+2024-08-26 01:28:53.187 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:32:28.349 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you help me find the toilet paper?
+2024-08-26 01:32:32.501 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:33:56.729 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the key to this room.
+2024-08-26 01:34:00.766 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the key to this room.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find key to this room');set_current_task('find key to this room')]",
+    "action_code": "key_position=find_object_3d('key to this room')\\nspeak_to_user(f'The key to this room is located at {key_position[2]} meters from us.')"
+}
+2024-08-26 01:34:15.412 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Help me find a toilet paper.
+2024-08-26 01:34:19.642 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:36:55.496 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, where is my toilet paper? Can you help me find it?
+2024-08-26 01:36:59.645 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:38:58.401 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find my toilet paper.
+2024-08-26 01:39:03.615 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:39:43.393 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the toilet paper.
+2024-08-26 01:39:47.832 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the toilet paper.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find toilet paper');set_current_task('find toilet paper')]",
+    "action_code": "toilet_paper_position=find_object_3d('toilet paper')\\nspeak_to_user(f'The toilet paper is located at {toilet_paper_position[2]} meters from us.')"
+}
+2024-08-26 01:40:27.642 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: You
+2024-08-26 15:57:20.644 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, can you hear me?
+2024-08-26 15:57:22.389 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Yes, I can hear you. How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 15:59:38.429 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the empty chair
+2024-08-26 15:59:44.265 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('closest empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-26 16:00:58.636 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: A robot helped me find an empty shell.
+2024-08-26 16:01:02.342 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I understand, I will help you find an empty chair now.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "chair_3d_position=find_object_3d('closest empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-26 16:01:17.893 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the empty chair.
+2024-08-26 16:01:53.474 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find the empty chair
+2024-08-26 16:01:57.190 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('closest empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-26 16:43:00.518 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: you
+2024-08-26 16:47:38.082 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi everyone, can you help me find a chair?
+2024-08-26 16:48:13.073 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, help me find a chair
+2024-08-26 16:58:29.081 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you hear me?
+2024-08-26 16:58:32.107 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Yes, I can hear you. How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 16:59:03.390 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-26 16:59:49.161 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, can you hear me?
+2024-08-26 16:59:57.151 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Yes, I can hear you. How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 17:01:49.078 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the empty chair in front of you
+2024-08-26 17:01:57.176 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the empty chair in front of you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair in front')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters in front of us.')"
+}
+2024-08-26 17:09:29.868 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you find a basketball in front of you?
+2024-08-26 17:09:34.207 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the basketball in front of you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child_to_node('find basketball','find empty chair');set_current_task('find basketball')]",
+    "action_code": "basketball_3d_position=find_object_3d('basketball in front')\nspeak_to_user(f'I found a basketball {basketball_3d_position[2]} meters in front of us.')"
+}
+2024-08-26 17:13:42.184 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you help me find the basketball?
+2024-08-26 17:13:51.141 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the basketball.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find basketball')]",
+    "action_code": "basketball_3d_position=find_object_3d('basketball in front')\nspeak_to_user(f'I found a basketball {basketball_3d_position[2]} meters in front of us.')"
+}
+2024-08-26 17:16:15.393 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you help me find the basketball?
+2024-08-26 17:16:27.176 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the basketball.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find basketball')]",
+    "action_code": "basketball_3d_position=find_object_3d('basketball in front')\nspeak_to_user(f'I found a basketball {basketball_3d_position[2]} meters in front of us.')"
+}
+2024-08-26 17:22:53.147 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: you
+2024-08-26 17:40:38.030 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi Robot, can you find the basketball in front of me?
+2024-08-26 17:42:21.623 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, can you find the passkey to pull in front of us?
+2024-08-26 17:42:25.970 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the passkey.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find passkey');set_current_task('find passkey')]",
+    "action_code": "passkey_position=find_object_3d('passkey')\nspeak_to_user(f'The passkey is located {passkey_position[2]} meters in front of us.')"
+}
+2024-08-26 17:43:13.946 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi everyone, can you find the Basketball in front of us?
+2024-08-26 17:43:19.383 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the basketball.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find basketball');set_current_task('find basketball')]",
+    "action_code": "basketball_position=find_object_3d('basketball')\nspeak_to_user(f'The basketball is located {basketball_position[2]} meters in front of us.')"
+}
+2024-08-26 17:45:16.627 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the chair in front of us.
+2024-08-26 17:45:25.528 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair');set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'The chair is located {chair_position[2]} meters in front of us.')"
+}
+2024-08-26 17:50:34.582 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: The robot finds the basketball in front of him.
+2024-08-26 17:50:43.191 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I have found the basketball in front of us.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find basketball')]",
+    "action_code": ""
+}
+2024-08-26 17:50:56.707 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi Roblox, find a less creative audience than all of us.
+2024-08-26 17:51:01.502 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I cannot perform that action.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 17:51:38.152 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the basketball in front of us
+2024-08-26 17:51:48.406 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the basketball.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find basketball');set_current_task('find basketball')]",
+    "action_code": "basketball_position=find_object_3d('basketball')\nspeak_to_user(f'The basketball is located {basketball_position[2]} meters in front of us.')"
+}
+2024-08-26 17:54:18.713 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you take me to my blue bag? I think it's in front of you.
+2024-08-26 17:54:25.089 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find your blue bag and take you to it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blue bag');set_current_task('find blue bag')]",
+    "action_code": "blue_bag_position=find_object_3d('blue bag')\nspeak_to_user(f'The blue bag is located {blue_bag_position[2]} meters in front of us. Guiding you to the blue bag.')\ngo_to('blue bag')\nspeak_to_user('We have arrived at the blue bag.')"
+}
+2024-08-26 17:55:14.420 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you find the blue bag in front of you?
+2024-08-26 17:55:26.295 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue bag.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue bag')]",
+    "action_code": "blue_bag_position=find_object_3d('blue bag')\nspeak_to_user(f'The blue bag is located {blue_bag_position[2]} meters in front of us.')"
+}
+2024-08-26 17:57:49.859 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I don't know what that guy did. Take me to my blue bag, and take me to the bag.
+2024-08-26 17:57:58.574 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find your blue bag and take you to it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue bag')]",
+    "action_code": "blue_bag_position=find_object_3d('blue bag')\nspeak_to_user(f'The blue bag is located {blue_bag_position[2]} meters in front of us. Guiding you to the blue bag.')\ngo_to('blue bag')\nspeak_to_user('We have arrived at the blue bag.')"
+}
+2024-08-26 17:59:19.465 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, there's a blue bag in front of you. Can you find the exact location of that bag and take me to the bag?
+2024-08-26 17:59:35.128 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the exact location of the blue bag and take you to it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue bag')]",
+    "action_code": "blue_bag_position=find_object_3d('blue bag')\nspeak_to_user(f'The blue bag is located {blue_bag_position[2]} meters in front of us. Guiding you to the blue bag.')\ngo_to('blue bag')\nspeak_to_user('We have arrived at the blue bag.')"
+}
+2024-08-26 18:04:31.386 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: you
+2024-08-26 18:04:48.062 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, you can see a blue bag in front of you, find where it is and take us to there.
+2024-08-26 18:04:52.059 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue bag and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue bag')]",
+    "action_code": "blue_bag_position=find_object_3d('blue bag')\\nspeak_to_user(f'I found the blue bag {blue_bag_position[2]} meters from us, guiding you to the bag.')\\ngo_to('blue bag')\\nspeak_to_user('We have arrived at the blue bag.')"
+}
+2024-08-26 18:06:19.726 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you take me to the door?
+2024-08-26 18:06:22.209 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you go to the door.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go to door');set_current_task('go to door')]",
+    "action_code": "go_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:06:35.315 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you find the door and take us to the door?
+2024-08-26 18:06:40.124 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('go to door')]",
+    "action_code": "door_position=find_object_3d('door')\\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\\ngo_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:11:18.671 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hyrobot will clear all the tasks.
+2024-08-26 18:11:22.510 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Okay, I will clear all the tasks.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find passkey');remove_child('find chair');remove_child('find basketball');remove_child('find blue bag');remove_child('go to door')]",
+    "action_code": ""
+}
+2024-08-26 18:11:40.740 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Now please find the door to this room and take us to the door.
+2024-08-26 18:11:46.188 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door to this room and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find door');set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door to this room')\\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\\ngo_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:15:21.095 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, there's a door in this room. Can you find the door and take us to the door?
+2024-08-26 18:15:25.501 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door in this room and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door in this room')\\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\\ngo_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:18:34.940 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an empty chair to sit.
+2024-08-26 18:18:41.492 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('closest empty chair')\\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now.')"
+}
+2024-08-26 18:19:55.731 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an empty chair if I'm interested.
+2024-08-26 18:20:09.255 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair if you are interested.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('closest empty chair')\\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair if you are interested.')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now if you wish.')"
+}
+2024-08-26 18:22:57.119 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi everyone, there's a door in front of you, can you find the door and take us to the door?
+2024-08-26 18:23:02.546 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I understand, here is what I am about to say to everyone: 'Hi everyone, there's a door in front of you, can you find the door and take us to the door?', is it okay?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 18:23:18.891 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Sotu hahan tongues, hetkinen avaruudelpäin.
+2024-08-26 18:23:24.636 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, I didn't understand that. Could you please repeat or clarify your request?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 18:23:40.954 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Ok robot, there is a door in front of us. Find the door and take us to the door.
+2024-08-26 18:23:49.099 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door in front of us and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door in front of us')\\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\\ngo_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:24:28.028 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Try again, try again.
+2024-08-26 18:24:39.584 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will try again to find the door in front of us and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door in front of us')\\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\\ngo_to('door')\\nspeak_to_user('We have arrived at the door.')"
+}
+2024-08-26 18:25:13.690 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: All right, take us to the green trash can in front of you.
+2024-08-26 18:25:22.628 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the green trash can in front of us and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find green trash can');set_current_task('find green trash can')]",
+    "action_code": "green_trash_can_position=find_object_3d('green trash can in front of us')\\nspeak_to_user(f'I found the green trash can {green_trash_can_position[2]} meters from us, guiding you to the trash can.')\\ngo_to('green trash can')\\nspeak_to_user('We have arrived at the green trash can.')"
+}
+2024-08-26 18:26:53.775 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Holy shit, the robot is on fire. I need to find the fire distinguisher. Take me to the fire distinguisher.
+2024-08-26 18:27:01.146 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the fire extinguisher and take us there immediately.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find fire extinguisher');set_current_task('find fire extinguisher')]",
+    "action_code": "fire_extinguisher_position=find_object_3d('fire extinguisher')\\nspeak_to_user(f'I found the fire extinguisher {fire_extinguisher_position[2]} meters from us, guiding you to the extinguisher.')\\ngo_to('fire extinguisher')\\nspeak_to_user('We have arrived at the fire extinguisher.')"
+}
+2024-08-26 18:27:50.767 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, I need you to take me to the fire extinguisher, like right now, immediately.
+2024-08-26 18:28:00.698 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will take you to the fire extinguisher immediately.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find fire extinguisher')]",
+    "action_code": "fire_extinguisher_position=find_object_3d('fire extinguisher')\\nspeak_to_user(f'I found the fire extinguisher {fire_extinguisher_position[2]} meters from us, guiding you to the extinguisher.')\\ngo_to('fire extinguisher')\\nspeak_to_user('We have arrived at the fire extinguisher.')"
+}
+2024-08-26 18:28:40.330 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Try again, try again, try again.
+2024-08-26 18:28:49.237 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will try again to find the fire extinguisher and take us there immediately.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find fire extinguisher')]",
+    "action_code": "fire_extinguisher_position=find_object_3d('fire extinguisher')\\nspeak_to_user(f'I found the fire extinguisher {fire_extinguisher_position[2]} meters from us, guiding you to the extinguisher.')\\ngo_to('fire extinguisher')\\nspeak_to_user('We have arrived at the fire extinguisher.')"
+}
+2024-08-26 18:29:33.981 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you take me to the exit sign?
+2024-08-26 18:29:41.461 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the exit sign and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find exit sign');set_current_task('find exit sign')]",
+    "action_code": "exit_sign_position=find_object_3d('exit sign')\\nspeak_to_user(f'I found the exit sign {exit_sign_position[2]} meters from us, guiding you to the exit sign.')\\ngo_to('exit sign')\\nspeak_to_user('We have arrived at the exit sign.')"
+}
+2024-08-26 18:30:42.285 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 這個動作會做得比較清楚
+2024-08-26 18:31:15.564 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello. I need to leave the building. Can you help me with that? Guide me to leave the building.
+2024-08-26 18:31:18.440 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you leave the building.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('leave building');set_current_task('leave building')]",
+    "action_code": "exit_sign_position=find_object_3d('exit sign')\nspeak_to_user(f'I found the exit sign {exit_sign_position[2]} meters from us, guiding you to the exit.')\nswitch_mode('guide')\ngo_to('exit sign')\nspeak_to_user('We have arrived at the exit sign, please follow the exit path to leave the building.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:32:17.932 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, before this time, have I ever asked you to go to the exit sign? If I have, have I also asked you to take me to somewhere else?
+2024-08-26 18:32:21.145 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Yes, you have previously asked me to find the exit sign. Additionally, you have asked me to find a door, an empty chair, a green trash can, and a fire extinguisher.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 18:35:38.667 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Did I ever ask you about the basketball?
+2024-08-26 18:35:42.519 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "No, you have not asked me about the basketball.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 18:37:39.107 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the door. There's a door ahead of us. Find the door and take us there.
+2024-08-26 18:37:44.894 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door ahead of us')\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\nswitch_mode('guide')\ngo_to('door')\nspeak_to_user('We have arrived at the door.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:40:56.891 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi, I need to store some of my belongings.
+2024-08-26 18:41:00.383 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I understand, I will help you store your belongings. Do you have a specific place in mind where you would like to store them?",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('store belongings')]",
+    "action_code": ""
+}
+2024-08-26 18:41:20.559 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I think there's a cabinet wall. A wall of cabinets in front of you. Let's go there.
+2024-08-26 18:41:25.985 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cabinet wall and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find cabinet wall')]",
+    "action_code": "cabinet_wall_position=find_object_3d('cabinet wall in front of us')\nspeak_to_user(f'I found the cabinet wall {cabinet_wall_position[2]} meters from us, guiding you to the cabinet wall.')\nswitch_mode('guide')\ngo_to('cabinet wall')\nspeak_to_user('We have arrived at the cabinet wall. You can store your belongings now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:41:54.169 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: How about lockers? I think there are a lot of lockers around here.
+2024-08-26 18:41:59.599 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the lockers and take us there.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find lockers')]",
+    "action_code": "lockers_position=find_object_3d('lockers around here')\nspeak_to_user(f'I found the lockers {lockers_position[2]} meters from us, guiding you to the lockers.')\nswitch_mode('guide')\ngo_to('lockers')\nspeak_to_user('We have arrived at the lockers. You can store your belongings now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:43:13.939 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Uh, there should be a bulletin board around here, if you can find it for me.
+2024-08-26 18:43:20.262 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the bulletin board.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find bulletin board','store belongings');set_current_task('find bulletin board')]",
+    "action_code": "bulletin_board_position=find_object_3d('bulletin board around here')\nspeak_to_user(f'I found the bulletin board {bulletin_board_position[2]} meters from us, guiding you to the bulletin board.')\nswitch_mode('guide')\ngo_to('bulletin board')\nspeak_to_user('We have arrived at the bulletin board.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:43:50.658 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi, robot. Tell me a joke about a stupid robot.
+2024-08-26 18:43:57.344 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Why did the robot go on a diet? Because it had too many bytes!",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-26 18:44:11.145 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi Robert, I need a place to sit
+2024-08-26 18:44:16.880 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find place to sit');set_current_task('find place to sit')]",
+    "action_code": "empty_chair_position=find_object_3d('closest empty chair')\nspeak_to_user(f'I found an empty chair {empty_chair_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:46:11.671 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Try again, try again. I don't like that chair. Find me another chair.
+2024-08-26 18:46:18.934 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will find another chair for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find another chair')]",
+    "action_code": "another_chair_position=find_object_3d('another empty chair')\nspeak_to_user(f'I found another empty chair {another_chair_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('another empty chair')\nspeak_to_user('We have arrived at the new chair, you can pull the chair out and sit now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:50:19.943 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, do that one more time. Find me a red chair.
+2024-08-26 18:50:31.349 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will find a red chair for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found a red chair {red_chair_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('red chair')\nspeak_to_user('We have arrived at the red chair, you can pull the chair out and sit now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:51:20.343 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Robot, find the red chair for me.
+2024-08-26 18:51:31.176 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will find the red chair for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found a red chair {red_chair_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('red chair')\nspeak_to_user('We have arrived at the red chair, you can pull the chair out and sit now.')\nswitch_mode('avoid')"
+}
+2024-08-26 18:52:04.430 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Find me a chair, find me a chair.
+2024-08-26 18:52:13.259 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will find a chair for you.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair {chair_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('chair')\nspeak_to_user('We have arrived at the chair, you can pull the chair out and sit now.')\nswitch_mode('avoid')"
+}
+2024-08-26 19:12:00.414 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Describing in the most detailed way how you can guide me to go through a door, step by step.
+2024-08-26 19:12:13.982 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will guide you through the door step by step.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('go through door');set_current_task('go through door')]",
+    "action_code": "door_position=find_object_3d('door ahead of us')\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\nswitch_mode('guide')\ngo_to('door')\nspeak_to_user('We have arrived at the door. I will now guide you through it.')\n# Step 1: Check if the door is open or closed\nis_door_open=check_condition('door is open')\nif not is_door_open:\n\tspeak_to_user('The door is closed. I will help you open it.')\n\t# Step 2: Open the door\n\topen_door()\n\tspeak_to_user('The door is now open. Please follow me through the door.')\n# Step 3: Guide the user through the door\nspeak_to_user('Please take a step forward and follow me through the door.')\ngo_to('through the door')\nspeak_to_user('We have successfully gone through the door.')\nswitch_mode('avoid')"
+}
+2024-08-26 19:14:40.925 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Tell me more about how you're going to guide the user to open the door. Remember, you don't have arms, you can't open the door yourself.
+2024-08-26 19:14:52.090 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will guide you to open the door step by step.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('guide user to open door')]",
+    "action_code": "door_position=find_object_3d('door ahead of us')\nspeak_to_user(f'I found the door {door_position[2]} meters from us, guiding you to the door.')\nswitch_mode('guide')\ngo_to('door')\nspeak_to_user('We have arrived at the door. I will now guide you to open it.')\n# Step 1: Check if the door is open or closed\nis_door_open=check_condition('door is open')\nif not is_door_open:\n\tspeak_to_user('The door is closed. Please reach out with your hand to find the door handle.')\n\t# Step 2: Wait for the user to find the door handle\n\twait_for_condition('user finds door handle')\n\tspeak_to_user('Great! Now, turn the handle to open the door.')\n\t# Step 3: Wait for the user to open the door\n\twait_for_condition('door is open')\n\tspeak_to_user('The door is now open. Please follow me through the door.')\n# Step 4: Guide the user through the door\nspeak_to_user('Please take a step forward and follow me through the door.')\ngo_to('through the door')\nspeak_to_user('We have successfully gone through the door.')\nswitch_mode('avoid')"
+}
+2024-08-28 14:34:29.680 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: hello robot this is a mic check
+2024-08-28 14:34:31.734 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hello! I can hear you clearly. How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 14:34:51.660 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, can you find a red chair in your field of view?
+2024-08-28 14:34:54.049 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found a red chair at position {red_chair_position}.')"
+}
+2024-08-28 14:37:30.098 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Can you find the right chair in your field of view?
+2024-08-28 14:37:33.968 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the right chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find right chair');set_current_task('find right chair')]",
+    "action_code": "right_chair_position=find_object_3d('right chair')\nspeak_to_user(f'I found a chair at position {right_chair_position}.')"
+}
+2024-08-28 14:38:57.357 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, let's try again, can you find a red chair?
+2024-08-28 14:39:01.278 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found a red chair at position {red_chair_position}.')"
+}
+2024-08-28 14:39:32.094 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 시청해주셔서 감사합니다! 구독 좋아요 댓글 부탁드려요!
+2024-08-28 14:39:43.947 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: There you go, and you'll find the red chair.
+2024-08-28 14:39:47.034 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "chair_3d_position=find_object_3d('red chair')\nspeak_to_user(f'I found the red chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('red chair')\nspeak_to_user('We have arrived at the red chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 14:41:07.672 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-08-28 14:41:25.236 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you find the red chair?
+2024-08-28 14:41:27.687 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found the red chair at position {red_chair_position}.')"
+}
+2024-08-28 14:49:13.168 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 最後まで視聴してくださって 本当にありがとうございます。
+2024-08-28 14:49:15.160 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "申し訳ありませんが、そのリクエストは私のモジュールでは対応できません。",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 14:49:24.308 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, robot.
+2024-08-28 14:49:26.149 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Hello! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 14:49:45.034 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: find a red chair
+2024-08-28 14:49:48.054 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found the red chair at position {red_chair_position}.')"
+}
+2024-08-28 14:54:50.677 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find an empty chair.
+2024-08-28 14:54:54.222 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 14:56:45.612 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I will walk to find the red chair.
+2024-08-28 14:56:56.748 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will guide you to the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('walk to red chair');set_current_task('walk to red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'The red chair is {red_chair_position[2]} meters away. I will guide you there.')\ngo_to('red chair')\nspeak_to_user('We have arrived at the red chair.')"
+}
+2024-08-28 15:00:59.592 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 最後まで視聴してくださって 本当にありがとうございます。
+2024-08-28 15:01:05.598 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "申し訳ありませんが、そのリクエストは私のモジュールでは対応できません。",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 15:01:14.336 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: A robot flying a red chair stacked on a blue chair.
+2024-08-28 15:01:17.327 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I cannot perform that action.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 15:01:25.203 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a red chair stacked on a blue chair.
+2024-08-28 15:01:30.615 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a red chair stacked on a blue chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair stacked on blue chair');set_current_task('find red chair stacked on blue chair')]",
+    "action_code": "red_on_blue_chair_position=find_object_3d('red chair stacked on blue chair')\nspeak_to_user(f'I found a red chair stacked on a blue chair at position {red_on_blue_chair_position}.')"
+}
+2024-08-28 15:03:16.590 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the big black box that says Kenova on it.
+2024-08-28 15:03:23.013 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the big black box that says Kenova on it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find big black box that says Kenova on it');set_current_task('find big black box that says Kenova on it')]",
+    "action_code": "big_black_box_position=find_object_3d('big black box that says Kenova on it')\nspeak_to_user(f'I found the big black box that says Kenova on it at position {big_black_box_position}.')"
+}
+2024-08-28 15:04:17.730 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the door.
+2024-08-28 15:04:21.974 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find door');set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door')\nspeak_to_user(f'I found the door at position {door_position}.')"
+}
+2024-08-28 15:04:48.964 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: My robot find the blackboard
+2024-08-28 15:04:54.103 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blackboard.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blackboard');set_current_task('find blackboard')]",
+    "action_code": "blackboard_position=find_object_3d('blackboard')\nspeak_to_user(f'I found the blackboard at position {blackboard_position}.')"
+}
+2024-08-28 15:05:36.853 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Our robots are in the tripod.
+2024-08-28 15:05:40.496 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I'm sorry, but I cannot perform that action.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 15:05:46.951 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a tripod
+2024-08-28 15:05:50.858 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a tripod.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find tripod');set_current_task('find tripod')]",
+    "action_code": "tripod_position=find_object_3d('tripod')\nspeak_to_user(f'I found the tripod at position {tripod_position}.')"
+}
+2024-08-28 15:07:06.423 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: There is a yellow poster on one of the doors, you can find that door.
+2024-08-28 15:07:10.933 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door with the yellow poster on it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find door with yellow poster');set_current_task('find door with yellow poster')]",
+    "action_code": "door_with_yellow_poster_position=find_object_3d('door with yellow poster')\nspeak_to_user(f'I found the door with the yellow poster at position {door_with_yellow_poster_position}.')"
+}
+2024-08-28 15:10:03.622 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I will find the blue chair
+2024-08-28 15:10:07.525 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blue chair');set_current_task('find blue chair')]",
+    "action_code": "blue_chair_position=find_object_3d('blue chair')\nspeak_to_user(f'I found the blue chair at position {blue_chair_position}.')"
+}
+2024-08-28 15:11:53.130 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I don't know what's on my jacket.
+2024-08-28 15:11:56.628 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find out what's on your jacket.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('check jacket');set_current_task('check jacket')]",
+    "action_code": "jacket_description=describe('your jacket')\nspeak_to_user(f'Here is what I see on your jacket: {jacket_description}.')"
+}
+2024-08-28 15:12:13.412 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: So, we have completed all the steps to clear the tree.
+2024-08-28 15:12:17.533 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Great! Let's clear the quest tree.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find red chair stacked on blue chair');remove_child('find big black box that says Kenova on it');remove_child('find door');remove_child('find blackboard');remove_child('find tripod');remove_child('find door with yellow poster');remove_child('find blue chair');remove_child('check jacket')]",
+    "action_code": ""
+}
+2024-08-28 15:12:26.866 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find my jacket.
+2024-08-28 15:12:31.563 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find your jacket.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find jacket');set_current_task('find jacket')]",
+    "action_code": "jacket_position=find_object_3d('jacket')\nspeak_to_user(f'I found your jacket at position {jacket_position}.')"
+}
+2024-08-28 15:15:27.479 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the blue chair.
+2024-08-28 15:15:31.290 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blue chair');set_current_task('find blue chair')]",
+    "action_code": "blue_chair_position=find_object_3d('blue chair')\nspeak_to_user(f'I found the blue chair at position {blue_chair_position}.')"
+}
+2024-08-28 15:24:18.438 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: And we will find the blue chain for me.
+2024-08-28 15:24:22.738 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chain.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blue chain');set_current_task('find blue chain')]",
+    "action_code": "blue_chain_position=find_object_3d('blue chain')\nspeak_to_user(f'I found the blue chain at position {blue_chain_position}.')"
+}
+2024-08-28 15:24:45.216 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the blue chair for me.
+2024-08-28 15:24:50.127 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue chair')]",
+    "action_code": "blue_chair_position=find_object_3d('blue chair')\nspeak_to_user(f'I found the blue chair at position {blue_chair_position}.')"
+}
+2024-08-28 15:33:24.558 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the blue chair.
+2024-08-28 15:33:30.010 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find blue chair')]",
+    "action_code": "blue_chair_position=find_object_3d('blue chair')\nspeak_to_user(f'I found the blue chair at position {blue_chair_position}.')"
+}
+2024-08-28 15:36:29.761 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I will find a chair with a jacket on it.
+2024-08-28 15:36:34.393 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a chair with a jacket on it.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair with jacket on it');set_current_task('find chair with jacket on it')]",
+    "action_code": "chair_with_jacket_position=find_object_3d('chair with jacket on it')\nspeak_to_user(f'I found a chair with a jacket on it at position {chair_with_jacket_position}.')"
+}
+2024-08-28 15:43:44.373 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: robot find the big cat
+2024-08-28 15:43:50.073 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the big cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find big cat');set_current_task('find big cat')]",
+    "action_code": "big_cat_position=find_object_3d('big cat')\nspeak_to_user(f'I found the big cat at position {big_cat_position}.')"
+}
+2024-08-28 15:44:08.005 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: robot find the right chair
+2024-08-28 15:44:18.583 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the right chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find right chair');set_current_task('find right chair')]",
+    "action_code": "right_chair_position=find_object_3d('right chair')\nspeak_to_user(f'I found the right chair at position {right_chair_position}.')"
+}
+2024-08-28 15:47:22.241 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: There you go, find the blue chair with the chair.
+2024-08-28 15:47:27.513 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the blue chair with the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find blue chair with chair');set_current_task('find blue chair with chair')]",
+    "action_code": "blue_chair_with_chair_position=find_object_3d('blue chair with chair')\nspeak_to_user(f'I found the blue chair with the chair at position {blue_chair_with_chair_position}.')"
+}
+2024-08-28 15:48:04.817 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Find the chair that is good for sitting on the wall.
+2024-08-28 15:48:11.004 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair that is good for sitting on the wall.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair good for sitting on wall');set_current_task('find chair good for sitting on wall')]",
+    "action_code": "chair_good_for_sitting_on_wall_position=find_object_3d('chair good for sitting on wall')\nspeak_to_user(f'I found the chair that is good for sitting on the wall at position {chair_good_for_sitting_on_wall_position}.')"
+}
+2024-08-28 15:49:47.313 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the empty box.
+2024-08-28 15:49:52.397 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the empty box.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty box');set_current_task('find empty box')]",
+    "action_code": "empty_box_position=find_object_3d('empty box')\nspeak_to_user(f'I found the empty box at position {empty_box_position}.')"
+}
+2024-08-28 15:50:24.582 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the text saying Kenova.
+2024-08-28 15:50:29.604 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the text saying Kenova.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find text saying Kenova');set_current_task('find text saying Kenova')]",
+    "action_code": "kenova_text_position=find_object_3d('text saying Kenova')\nspeak_to_user(f'I found the text saying Kenova at position {kenova_text_position}.')"
+}
+2024-08-28 15:51:39.824 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find my jacket.
+2024-08-28 15:51:45.230 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find your jacket.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find jacket');set_current_task('find jacket')]",
+    "action_code": "jacket_position=find_object_3d('jacket')\nspeak_to_user(f'I found your jacket at position {jacket_position}.')"
+}
+2024-08-28 15:52:23.933 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Try again, I'm pretty sure my jacket is somewhere here in the room.
+2024-08-28 15:52:29.387 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will look again to find your jacket in the room.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find jacket')]",
+    "action_code": "jacket_position=find_object_3d('jacket')\nspeak_to_user(f'I found your jacket at position {jacket_position}.')"
+}
+2024-08-28 15:53:18.657 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: hi robot there's another robot in this room find that
+2024-08-28 15:53:23.718 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the other robot in this room.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find other robot');set_current_task('find other robot')]",
+    "action_code": "other_robot_position=find_object_3d('robot')\nspeak_to_user(f'I found the other robot at position {other_robot_position}.')"
+}
+2024-08-28 15:56:28.311 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Alright, take me to somewhere I can sit.
+2024-08-28 15:56:35.987 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find place to sit');set_current_task('find place to sit')]",
+    "action_code": "place_to_sit_position=find_object_3d('chair')\nspeak_to_user(f'I found a place to sit at position {place_to_sit_position}. I will guide you there.')\ngo_to('chair')\nspeak_to_user('We have arrived at the place to sit.')"
+}
+2024-08-28 16:23:20.003 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, can you find me an empty chair?
+2024-08-28 16:23:25.747 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 16:24:20.970 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, can you find an empty chair?
+2024-08-28 16:24:27.521 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 16:25:15.166 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello, robot, can you find my empty chair?
+2024-08-28 16:25:20.480 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find your empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 16:27:58.076 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you find an empty chair for me?
+2024-08-28 16:28:03.759 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 16:29:30.887 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, can you help me find an empty chair?
+2024-08-28 16:29:36.253 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair at position {empty_chair_position}.')"
+}
+2024-08-28 16:33:47.303 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find somewhere I can sit and rest.
+2024-08-28 16:33:58.115 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find somewhere you can sit and rest.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find place to sit and rest');set_current_task('find place to sit and rest')]",
+    "action_code": "place_to_sit_and_rest_position=find_object_3d('chair')\nspeak_to_user(f'I found a place to sit and rest at position {place_to_sit_and_rest_position}. I will guide you there.')\ngo_to('chair')\nspeak_to_user('We have arrived at the place to sit and rest.')"
+}
+2024-08-28 16:36:00.940 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, I want to sit on a blue chair
+2024-08-28 16:36:08.053 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a blue chair to sit on.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('sit on blue chair');set_current_task('sit on blue chair')]",
+    "action_code": "blue_chair_position=find_object_3d('blue chair')\nspeak_to_user(f'I found a blue chair at position {blue_chair_position}. I will guide you there.')\ngo_to('blue chair')\nspeak_to_user('We have arrived at the blue chair. You can sit now.')"
+}
+2024-08-28 16:53:42.406 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find the red chair for me
+2024-08-28 16:53:48.476 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found the red chair at position {red_chair_position}.')"
+}
+2024-08-28 16:54:54.099 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: A robot find a black chair for me
+2024-08-28 16:55:00.756 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the black chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black chair');set_current_task('find black chair')]",
+    "action_code": "black_chair_position=find_object_3d('black chair')\nspeak_to_user(f'I found the black chair at position {black_chair_position}.')"
+}
+2024-08-28 16:55:29.480 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a black chair for me.
+2024-08-28 16:55:31.330 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the black chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find black chair');set_current_task('find black chair')]",
+    "action_code": "chair_position=find_object_3d('black chair')\nspeak_to_user(f'I found a black chair at position {chair_position}.')"
+}
+2024-08-28 16:57:19.161 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a cat for me
+2024-08-28 16:57:22.130 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find cat');set_current_task('find cat')]",
+    "action_code": "cat_position=find_object_3d('cat')\nspeak_to_user(f'I found a cat at position {cat_position}.')"
+}
+2024-08-28 16:57:47.775 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: A robot find a cat for me
+2024-08-28 16:57:50.318 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find cat');set_current_task('find cat')]",
+    "action_code": "cat_position=find_object_3d('cat')\nspeak_to_user(f'I found a cat at position {cat_position}.')"
+}
+2024-08-28 16:59:02.925 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: A robot find a cat for me.
+2024-08-28 16:59:06.201 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find cat')]",
+    "action_code": "cat_position=find_object_3d('cat')\nspeak_to_user(f'I found a cat at position {cat_position}.')"
+}
+2024-08-28 17:00:31.375 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: iRobot find a cat
+2024-08-28 17:00:34.825 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find cat');set_current_task('find cat')]",
+    "action_code": "cat_position=find_object_3d('cat')\nspeak_to_user(f'I found a cat at position {cat_position}.')"
+}
+2024-08-28 17:02:03.021 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a cat.
+2024-08-28 17:02:05.687 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the cat.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find cat');set_current_task('find cat')]",
+    "action_code": "cat_position=find_object_3d('cat')\nspeak_to_user(f'I found a cat at position {cat_position}.')"
+}
+2024-08-28 17:11:38.234 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Okay, try again. Now find a keyboard
+2024-08-28 17:11:40.803 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the keyboard.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find keyboard');set_current_task('find keyboard')]",
+    "action_code": "keyboard_position=find_object_3d('keyboard')\nspeak_to_user(f'I found a keyboard at position {keyboard_position}.')"
+}
+2024-08-28 17:16:00.157 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hello robot, find a dog.
+2024-08-28 17:16:05.134 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the dog.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find dog');set_current_task('find dog')]",
+    "action_code": "dog_position=find_object_3d('dog')\nspeak_to_user(f'I found a dog at position {dog_position}.')"
+}
+2024-08-28 17:16:36.094 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Alright, we're about to find that door.
+2024-08-28 17:16:39.877 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find door');set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door')\nspeak_to_user(f'I found a door at position {door_position}.')"
+}
+2024-08-28 17:16:59.197 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I robot find the chair
+2024-08-28 17:17:02.583 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair');set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair at position {chair_position}.')"
+}
+2024-08-28 17:17:34.994 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a door.
+2024-08-28 17:17:38.825 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the door.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find door')]",
+    "action_code": "door_position=find_object_3d('door')\nspeak_to_user(f'I found a door at position {door_position}.')"
+}
+2024-08-28 17:22:34.494 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a chair
+2024-08-28 17:22:37.773 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair at position {chair_position}.')"
+}
+2024-08-28 17:52:36.100 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I will find a chair.
+2024-08-28 17:52:39.910 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair at position {chair_position}.')"
+}
+2024-08-28 17:53:38.873 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Aerobot find the chair again
+2024-08-28 17:53:41.719 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find chair')]",
+    "action_code": "chair_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair at position {chair_position}.')"
+}
+2024-08-28 18:10:34.974 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, try the red chair.
+2024-08-28 18:10:40.473 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the red chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find red chair');set_current_task('find red chair')]",
+    "action_code": "red_chair_position=find_object_3d('red chair')\nspeak_to_user(f'I found a red chair at position {red_chair_position}.')"
+}
+2024-08-28 18:40:13.703 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find a chair.
+2024-08-28 18:40:18.819 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a chair.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair');set_current_task('find chair')]",
+    "action_code": "chair_3d_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\ngo_to('chair')\nspeak_to_user('We have arrived at the chair, you can pull the chair out and sit now')"
+}
+2024-08-28 18:42:51.448 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, I need to throw out some garbage.
+2024-08-28 18:42:58.743 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a garbage bin.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('throw out garbage');set_current_task('throw out garbage')]",
+    "action_code": "garbage_bin_3d_position=find_object_3d('garbage bin')\nspeak_to_user(f'I found a garbage bin {garbage_bin_3d_position[2]} meters from us, guiding you to the garbage bin.')\ngo_to('garbage bin')\nspeak_to_user('We have arrived at the garbage bin, you can throw out your garbage now')"
+}
+2024-08-28 18:43:09.087 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Yeah, I think there's a garbage bin nearby. Can you find the garbage bin?
+2024-08-28 18:43:18.243 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will look around to find the garbage bin.",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": "garbage_bin_3d_position=find_object_3d('garbage bin')\nspeak_to_user(f'I found a garbage bin {garbage_bin_3d_position[2]} meters from us, guiding you to the garbage bin.')\ngo_to('garbage bin')\nspeak_to_user('We have arrived at the garbage bin, you can throw out your garbage now')"
+}
+2024-08-28 18:44:15.113 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, I am Thursday. Can you find some water dispenser for me?
+2024-08-28 18:44:19.206 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a water dispenser.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find water dispenser');set_current_task('find water dispenser')]",
+    "action_code": "water_dispenser_3d_position=find_object_3d('water dispenser')\nspeak_to_user(f'I found a water dispenser {water_dispenser_3d_position[2]} meters from us, guiding you to the water dispenser.')\ngo_to('water dispenser')\nspeak_to_user('We have arrived at the water dispenser, you can fill your bottle now')"
+}
+2024-08-28 19:02:15.534 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I don't know, find the closest table for me.
+2024-08-28 19:02:21.758 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find the closest table.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find closest table');set_current_task('find closest table')]",
+    "action_code": "table_3d_position=find_object_3d('table')\nspeak_to_user(f'I found a table {table_3d_position[2]} meters from us, guiding you to the table.')\nswitch_mode('guide')\ngo_to('table')\nspeak_to_user('We have arrived at the table, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:03:35.508 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: I'd love to hear what both of you have to say.
+2024-08-28 19:03:41.586 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I understand, here is what I am about to say to the public: 'Please clear a way for us, thank you very much', is it okay?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 19:04:14.878 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Terrible. I need to find somewhere to spend my dinner. Find somewhere for me to eat dinner.
+2024-08-28 19:04:20.009 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find somewhere to eat dinner.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find place to eat dinner');set_current_task('find place to eat dinner')]",
+    "action_code": "map_info=get_map_info('food')\nspeak_to_user(map_info)"
+}
+2024-08-28 19:04:35.538 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-28 19:04:42.913 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I found a food court nearby that serves a variety of food. Would you like to go there?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 19:04:55.143 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: to find me if I'm going to be sick.
+2024-08-28 19:05:06.779 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a place to eat dinner first. Then we can address your concern about feeling sick.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('check if user is sick','find place to eat dinner')]",
+    "action_code": ""
+}
+2024-08-28 19:05:24.500 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: forget about everything okay forget about everything now just find me somewhere to sit
+2024-08-28 19:05:36.792 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "Okay, I will forget about everything else and find you somewhere to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find closest table');remove_child('find place to eat dinner');remove_child('check if user is sick');add_child('find place to sit');set_current_task('find place to sit')]",
+    "action_code": "seat_3d_position=find_object_3d('seat')\nspeak_to_user(f'I found a seat {seat_3d_position[2]} meters from us, guiding you to the seat.')\nswitch_mode('guide')\ngo_to('seat')\nspeak_to_user('We have arrived at the seat, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:08:16.590 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robots, find me a chair to sit.
+2024-08-28 19:08:37.279 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find chair to sit','find place to sit');set_current_task('find chair to sit')]",
+    "action_code": "chair_3d_position=find_object_3d('chair')\nspeak_to_user(f'I found a chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('chair')\nspeak_to_user('We have arrived at the chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:11:40.531 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an empty chair to sit.
+2024-08-28 19:11:58.270 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair to sit','find place to sit');set_current_task('find empty chair to sit')]",
+    "action_code": "empty_chair_3d_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair {empty_chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:14:07.825 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an occupied chair to sit.
+2024-08-28 19:14:48.569 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an occupied chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find occupied chair to sit','find place to sit');set_current_task('find occupied chair to sit')]",
+    "action_code": "occupied_chair_3d_position=find_object_3d('occupied chair')\nspeak_to_user(f'I found an occupied chair {occupied_chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('occupied chair')\nspeak_to_user('We have arrived at the occupied chair, you can ask the person to move if you want to sit here')\nswitch_mode('avoid')"
+}
+2024-08-28 19:16:52.720 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi regards, I need to find someone to help my brother, so can you find me an empty place to sit?
+2024-08-28 19:17:43.819 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty place to sit','find place to sit');set_current_task('find empty place to sit')]",
+    "action_code": "empty_place_3d_position=find_object_3d('empty place')\nspeak_to_user(f'I found an empty place {empty_place_3d_position[2]} meters from us, guiding you to the place.')\nswitch_mode('guide')\ngo_to('empty place')\nspeak_to_user('We have arrived at the empty place, you can sit here now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:19:47.102 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: or what? find an empty chair
+2024-08-28 19:19:57.651 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair to sit')]",
+    "action_code": "empty_chair_3d_position=find_object_3d('empty chair')\nspeak_to_user(f'I found an empty chair {empty_chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-08-28 19:22:24.268 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: All right, well, find me at MPHR for six.
+2024-08-28 19:22:42.655 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find MPHR for six.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find MPHR for six');set_current_task('find MPHR for six')]",
+    "action_code": "location_3d_position=find_object_3d('MPHR for six')\nspeak_to_user(f'I found MPHR for six {location_3d_position[2]} meters from us, guiding you to the location.')\nswitch_mode('guide')\ngo_to('MPHR for six')\nspeak_to_user('We have arrived at MPHR for six.')\nswitch_mode('avoid')"
+}
+2024-08-28 19:22:47.138 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: 
+2024-08-28 19:23:07.704 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: مرحبا رولوف، درست کنید که درست کنید که درست کنید.
+2024-08-28 19:23:10.825 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "مرحباً! كيف يمكنني مساعدتك اليوم؟",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 19:23:30.430 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find an empty place for me to sit.
+2024-08-28 19:23:35.658 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty place to sit');set_current_task('find empty place to sit')]",
+    "action_code": "empty_place_3d_position=find_object_3d('empty place to sit')\\nspeak_to_user(f'I found an empty place {empty_place_3d_position[2]} meters from us, guiding you to the place.')\\nswitch_mode('guide')\\ngo_to('empty place')\\nspeak_to_user('We have arrived at the empty place, you can sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-28 19:24:44.469 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: you
+2024-08-28 19:25:40.402 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Everyone, find an empty chair for me to sit.
+2024-08-28 19:25:49.030 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I understand, here is what I am about to say to the crowd: 'Everyone, please find an empty chair for us to sit, thank you very much', is it okay?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-08-28 19:26:10.197 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Find the empty place for me to sit
+2024-08-28 19:26:16.751 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty place to sit')]",
+    "action_code": "empty_place_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {empty_place_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-28 19:29:42.030 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an empty chair to sit on.
+2024-08-28 19:29:50.936 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit on.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair to sit on');set_current_task('find empty chair to sit on')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {empty_chair_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-28 19:40:00.862 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me an empty chair to sit.
+2024-08-28 19:40:06.978 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[set_current_task('find empty chair to sit on')]",
+    "action_code": "empty_chair_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {empty_chair_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-08-28 19:42:24.230 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Thank you.
+2024-08-28 19:43:07.659 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:26 - TranscriptionPlus: Hi robot, find me a empty chair to sit.
+2024-08-28 19:43:12.072 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:34 - Agent responsePlus: {
+    "speak_to_user": "I will help you find an empty chair to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find empty chair');set_current_task('find empty chair')]",
+    "action_code": "chair_3d_position=find_object_3d('empty chair')\\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\\nswitch_mode('guide')\\ngo_to('empty chair')\\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\\nswitch_mode('avoid')\\nwait_for_condition('user sit')\\nswitch_mode('sleep')"
+}
+2024-09-05 16:37:35.672 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-09-05 16:39:11.576 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: hello bro
+2024-09-05 17:06:34.745 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: hello my friend
+2024-09-05 17:06:36.338 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Hello! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-09-05 17:06:49.699 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: whats up
+2024-09-05 17:06:52.281 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I'm here to help you navigate and assist with any tasks you need. How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-09-05 17:07:04.451 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: how long does each gpt call take?
+2024-09-05 17:07:07.136 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "The time it takes for each GPT call can vary, but it usually takes a few seconds. How can I assist you further?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-09-05 17:08:02.345 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: i need to find a place to sit
+2024-09-05 17:08:05.707 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you find a place to sit.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[add_child('find place to sit');set_current_task('find place to sit')]",
+    "action_code": "chair_3d_position=find_object_3d_from_command('find an empty chair')\nspeak_to_user(f'I found an empty chair {chair_3d_position[2]} meters from us, guiding you to the chair.')\nswitch_mode('guide')\ngo_to('empty chair')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nswitch_mode('avoid')\nwait_for_condition('user sit')\nswitch_mode('sleep')"
+}
+2024-09-05 17:09:06.132 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: i need to leave the room
+2024-09-05 17:09:10.015 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "I will help you leave the room.",
+    "speak_to_public": "",
+    "quest_tree_augment": "[remove_child('find place to sit');add_child('leave the room');set_current_task('leave the room')]",
+    "action_code": "switch_mode('guide')\ngo_to('exit')\nspeak_to_user('We have reached the exit. You can leave the room now.')"
+}
+2024-09-05 17:21:36.187 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: MBC 뉴스 이덕영입니다.
+2024-09-05 17:21:46.292 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: hi
+2024-09-05 17:21:48.700 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:37 - Agent responsePlus: {
+    "speak_to_user": "Hello! How can I assist you today?",
+    "speak_to_public": "",
+    "quest_tree_augment": "",
+    "action_code": ""
+}
+2024-09-05 17:21:59.879 | INFO     | TurnBasedConversationPlus:end_speech_and_respond:29 - TranscriptionPlus: MBC 뉴스 이덕영입니다.

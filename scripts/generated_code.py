@@ -1,0 +1,1 @@
+speak_to_user("Hello! How can I assist you today?")

@@ -8,11 +8,9 @@ from vocode.turn_based.output_device.base_output_device import BaseOutputDevice
 from vocode.turn_based.synthesizer.base_synthesizer import BaseSynthesizer
 from vocode.turn_based.transcriber.base_transcriber import BaseTranscriber
 
-
 # Configure loguru to log to a file and the console
 logger.add("turn_based_conversation.log", rotation="1 MB")  # Log to a file with rotation
 #logger.add(sys.stdout, level="INFO")  # Log to the console
-
 
 def clean_json(code):
     # Remove markdown code block delimiters
@@ -23,20 +21,25 @@ def clean_json(code):
 class TurnBasedConversationPlus(TurnBasedConversation):
 
         
-    def end_speech_and_respond(self):
-        human_input = self.transcriber.transcribe(self.input_device.end_listening())
+    def end_speech_and_respond(self,input=""):
+        if input=="":
+            human_input = self.transcriber.transcribe(self.input_device.end_listening())
+        else:
+            human_input = input
         logger.info(f"TranscriptionPlus: {human_input}")
         agent_response = self.agent.respond(human_input)
         
         agent_response_dict=json.loads(clean_json(agent_response))
         
         speak_to_user = agent_response_dict["speak_to_user"]
-        
 
         
         logger.info(f"Agent responsePlus: {agent_response}")
-        self.output_device.send_audio(self.synthesizer.synthesize(speak_to_user))
+        #self.output_device.send_audio(self.synthesizer.synthesize(speak_to_user))
         return agent_response
+    def say_things(self,string:str):
+        self.output_device.send_audio(self.synthesizer.synthesize(string))
+        pass
     
     def call_module(self,module_command):
         print("TBD call module developing")
