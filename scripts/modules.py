@@ -46,6 +46,8 @@ speak_to_user_publisher=rospy.Publisher('/speak_to_user', String, queue_size=10)
 speak_to_public_publisher=rospy.Publisher('/speak_to_public', String, queue_size=10)
 find_object_3d_publisher=rospy.Publisher('/find_object', String, queue_size=10)
 describe_environment_publisher=rospy.Publisher('/describe_environment', String, queue_size=10)
+describe_object_publisher=rospy.Publisher('/describe_object', String, queue_size=10)
+read_publisher=rospy.Publisher('/read', String, queue_size=10)
 
 def save_variables(variable_list):
     '''
@@ -141,7 +143,9 @@ def go_to(location, command='') -> None:
         go_to_publisher.publish(pose) 
     
     print(f"Going to {location}")
-    pass
+    goal_status=rospy.wait_for_message('/move_base/goal_status', Int8)
+    speak_to_user(f"{location} arrived")
+    return
 
 
     
@@ -159,8 +163,20 @@ def describe(object:str)->str:
     Returns:
     str: A string describing the object.
     '''  
-    print(f"Describing {object}")
-    return f"{object} looks very nice"
+    event = threading.Event()
+    description=''
+    describe_environment_publisher.publish(String(object))
+    def describe_object_callback(data):
+        nonlocal description
+        print(data.data)
+        event.set()
+        description=data.data
+
+    rospy.Subscriber('/describe_environment_complete', String, describe_object_callback)
+    event.wait()
+    #print(f"Describing environment in {direction} direction")
+    return description
+
 
 def find_object_3d_from_command(object:str)->list[int]:
     '''
@@ -222,9 +238,19 @@ def read(object:str)->str:
     This module captures the text on a requested object, to help the user understand the text on th object.
     This module will return a string that contains the text on the object.
     '''
-    print(f"Reading text on {object}")
-    return f"Text on {object} is very interesting"
+    event = threading.Event()
+    description=''
+    describe_environment_publisher.publish(String(object))
+    def read_callback(data):
+        nonlocal description
+        print(data.data)
+        event.set()
+        description=data.data
 
+    rospy.Subscriber('/read_complete', String, read_callback)
+    event.wait()
+    #print(f"Describing environment in {direction} direction")
+    return description
 def describe_environment(direction:str)->str:
     '''
     This module describe the entire environment captured using your front/side/back camera to the user.
@@ -271,7 +297,7 @@ def get_map_info(location: str) -> str:
         "coordinate": (100, 100),
         "note": "a nice convenient store with many things"
     }
-    map_info_list.append(example_map_info_entry)
+    #map_info_list.append(example_map_info_entry)
     return map_info_list  # f"Map info for {location} is as following: it is a good place, have many things"
 def wait_for_condition(condition:str)->None:
     '''
