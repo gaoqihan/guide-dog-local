@@ -45,6 +45,8 @@ go_to_publisher = rospy.Publisher("/move_base_simple/goal", PoseStamped, queue_s
 speak_to_user_publisher=rospy.Publisher('/speak_to_user', String, queue_size=10)
 speak_to_public_publisher=rospy.Publisher('/speak_to_public', String, queue_size=10)
 find_object_3d_publisher=rospy.Publisher('/find_object', String, queue_size=10)
+describe_environment_publisher=rospy.Publisher('/describe_environment', String, queue_size=10)
+
 def save_variables(variable_list):
     '''
     Saves the given variables into a temporary file.
@@ -103,11 +105,13 @@ def go_to(location, command='') -> None:
         #go_to_publisher.publish(location)
         location_info_list = get_map_info(location)
 
-        #go_to(location_info["coordinant"])
-        speak_to_user(speech)
+        #go_to(location_info["coordinate"])
         if location_info_list == []:
             # Location not found in map
             print("Location not found in map, finding in surroundings")
+            speech="Location not found in map, looking around to find it"
+            speak_to_user(speech)
+
             x, y = find_object_3d_from_command(command)
             if x == -1 and y == -1:
                 speak_to_user("I can't find the location you are looking for, starting to explore a bit")
@@ -117,9 +121,9 @@ def go_to(location, command='') -> None:
             # Location found in map
             speech = "I found the following locations in the map"
             location_info = location_info_list[0]
-            speech += f"{location_info['name']} at {location_info['coordinant']}, guiding you there"
+            speech += f"{location_info['name']} at {location_info['coordinate']}, guiding you there"
             speak_to_user(speech)
-            x, y = location_info['coordinant']
+            x, y = location_info['coordinate']
     
     pose = PoseStamped()
     pose.header.frame_id = "map"
@@ -138,47 +142,7 @@ def go_to(location, command='') -> None:
     
     print(f"Going to {location}")
     pass
-    if isinstance(location, tuple):
-        x, y = location
-    elif isinstance(location, str):
-        #go_to_publisher.publish(location)
-        location_info_list=get_map_info(location)
 
-        #go_to(location_info["coordinant"])
-        speak_to_user(speech)
-        if location_info_list==[]:
-            #location not found in map 
-            print("Location not found in map, find in surronuding")
-            x,y=find_object_3d_from_command(command)
-            if x==-1 and y==-1:
-                speak_to_user("I can't find the location you are looking for starting to explore a bit")
-                exploration()
-                return
-            
-        else:
-            #location found in map
-            speech="I found the following locations in the map"
-            location_info=location_info_list[0]
-            speech+=f"{location_info['name']} at {location_info['coordinant']},guiding you to there"
-            speak_to_user(speech)
-            x, y = location_info['coordinant']
-    pose=PoseStamped()
-    pose.header.frame_id = "map"
-
-    pose.pose.position.x = x
-    pose.pose.position.y = y
-    pose.pose.position.z = 0
-
-    pose.pose.orientation.x = 0
-    pose.pose.orientation.y = 0
-    pose.pose.orientation.z = 0
-    pose.pose.orientation.w = 1
-    pose.header.stamp = rospy.Time.now()
-    for i in range(5):
-        go_to_publisher.publish(pose) 
-    
-    print(f"Going to {location}")
-    pass
 
     
 def exploration():
@@ -220,7 +184,7 @@ def find_object_3d_from_command(object:str)->list[int]:
     def find_object_3d_callback(msg):
         nonlocal result
         #result = [int(x) for x in msg.data.split(',')]
-        result = msg.data#round(msg.data, 1)
+        result = msg#round(msg.data, 1)
         event.set()
     rospy.Subscriber('/best_goal', PoseStamped, find_object_3d_callback)
 
@@ -266,21 +230,49 @@ def describe_environment(direction:str)->str:
     This module describe the entire environment captured using your front/side/back camera to the user.
     This module will return a string that describes the environment.
     '''
-    print(f"Describing environment in {direction} direction")
-    return "{direction} direction looks very nice,have many things"
+    event = threading.Event()
+    description=''
+    describe_environment_publisher.publish(String(direction))
+    def describe_environment_callback(data):
+        nonlocal description
+        print(data.data)
+        event.set()
+        description=data.data
 
-def get_map_info(location:str)->str:
+    rospy.Subscriber('/describe_environment_complete', String, describe_environment_callback)
+    event.wait()
+    #print(f"Describing environment in {direction} direction")
+    return description
+
+def get_map_info(location: str) -> str:
     '''
-    This module will help the user understand the map of the location. this module can be used for you to get information from the map as well
-    This module should be used when the user asks you for information that may be contained in the map.
-    This module will return a string that contains the information from the map. if nothing related is found, it should return an empty string
+    Retrieves information about a specified location from the map.
+
+    This function helps the user understand the map of a given location. It can be used to fetch 
+    information from the map when the user requests details that may be contained within it. 
+    The function returns a string containing the information from the map. If no relevant 
+    information is found, it returns an empty string.
+
+    Parameters:
+    location (str): The name of the location to get information about.
+
+    Returns:
+        list: A list of dictionaries, each containing information about a specific point of interest 
+            on the map. Each dictionary contains the following keys:
+            - 'name': The name of the point of interest.
+            - 'coordinate': A tuple representing the (x, y) coordinates of the point of interest.
+            - 'note': A note describing the point of interest.
+            If no information is found, returns an empty list.
     '''
     print(f"Getting map info for {location}")
-    map_info_list=[]
-    example_map_info_entry={"name":"convinient store","coordinant":(100,100),"note":"a nice convineint store with many things"}
+    map_info_list = []
+    example_map_info_entry = {
+        "name": "convenient store",
+        "coordinate": (100, 100),
+        "note": "a nice convenient store with many things"
+    }
     map_info_list.append(example_map_info_entry)
-    return map_info_list#f"Map info for {location} is as following: it is a good place, have many things"
-
+    return map_info_list  # f"Map info for {location} is as following: it is a good place, have many things"
 def wait_for_condition(condition:str)->None:
     '''
     This module allows you to keep checking using camera whether a condition is met, you will not move untill a condition is met.
@@ -312,7 +304,7 @@ def speak_to_user(message:str)->None:
     '''
     This module will allow you to speak to the user.
     '''
-
+    print(f"Speaking to user: {message}")
     message=String(message)
     
     speak_to_user_publisher.publish(message)
