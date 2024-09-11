@@ -1,3 +1,4 @@
-speak_to_user("I will help you find the door.")
-door_position = find_object_3d_from_command('door')
-speak_to_user('I have found the door. It is located at position ' + str(door_position))
+speak_to_user("I will describe what I see in front of me.")
+front_description=describe_environment('front')
+speak_to_user(front_description)
+reset_cancel()

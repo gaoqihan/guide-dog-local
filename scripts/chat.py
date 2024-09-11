@@ -11,7 +11,7 @@ from TurnBasedConversationPlus import TurnBasedConversationPlus
 from dotenv import load_dotenv
 import rospy
 from std_msgs.msg import String, Int8
-
+import time
 class Settings(BaseSettings):
     """
     Settings for the turn-based conversation quickstart.
@@ -32,7 +32,8 @@ load_dotenv()
 settings = Settings()
 
 if __name__ == "__main__":
-    mode="testing"
+    #mode="testing"
+    mode="onboard"
     rospy.init_node('chat_backend_client_node')
 
 
@@ -81,21 +82,31 @@ if __name__ == "__main__":
                 break
     elif mode=="onboard":
         recording=False
-        last_pressed_time=rospy.get_time()
+        last_pressed_time=time.time()
+        print("press button to record")
+        queue_num=0
         def button_pressed_callback(data):
-            time_lapsed=rospy.get_time()-last_pressed_time
-            if recording==False:
+            global last_pressed_time,recording,queue_num
+            time_lapsed=time.time()-last_pressed_time
+            last_pressed_time=time.time()
+            print(last_pressed_time,time_lapsed)
+            if time_lapsed<0.5:
+                pass
+            
+            elif recording==False:
+                if queue_num>0:
+                    queue_num-=1
+                    return
+                    
                 print("Starting recording")
-                last_pressed_time=rospy.get_time()
                 conversation.start_speech()
                 recording=True
-            elif recording==True and time_lapsed<0.5:
-                last_pressed_time=rospy.get_time()
-                pass
             else:
+                queue_num=1
                 print("Ending recording")
                 agent_response=conversation.end_speech_and_respond()
                 recording=False
-                rospy.Publisher('/speak_to_user', String, queue_size=10).publish(agent_response)
+                rospy.sleep(1)
+                #rospy.Publisher('/speak_to_user', String, queue_size=10).publish(agent_response)
         rospy.Subscriber('/ButtonPress', Int8, button_pressed_callback,queue_size=1)
         rospy.spin()

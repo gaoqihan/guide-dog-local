@@ -48,7 +48,19 @@ find_object_3d_publisher=rospy.Publisher('/find_object', String, queue_size=10)
 describe_environment_publisher=rospy.Publisher('/describe_environment', String, queue_size=10)
 describe_object_publisher=rospy.Publisher('/describe_object', String, queue_size=10)
 read_publisher=rospy.Publisher('/read', String, queue_size=10)
+switch_mode_publisher=rospy.Publisher('/mode', Int8, queue_size=10)
+cancel=False
+def reset_cancel():
+    global cancel
+    cancel=False
+    return
+def cancel_callback(data):
+    global cancel
+    print("User cancelled the task")
+    cancel=True
+    #raise KeyError("User cancelled the task")
 
+rospy.Subscriber('cancel', String, cancel_callback)
 def save_variables(variable_list):
     '''
     Saves the given variables into a temporary file.
@@ -83,6 +95,9 @@ def load_variables():
         return pickle.load(f)
 
 def go_to(location, command='') -> None:
+    global cancel
+    if cancel:
+        return
     '''
     Navigate to the specified location.
 
@@ -119,6 +134,11 @@ def go_to(location, command='') -> None:
                 speak_to_user("I can't find the location you are looking for, starting to explore a bit")
                 exploration()
                 return
+            else:
+                # Location found in surroundings
+                speech = "I found the following locations in the surroundings"
+                speech += f"guiding you there"
+                speak_to_user(speech)
         else:
             # Location found in map
             speech = "I found the following locations in the map"
@@ -143,17 +163,37 @@ def go_to(location, command='') -> None:
         go_to_publisher.publish(pose) 
     
     print(f"Going to {location}")
-    goal_status=rospy.wait_for_message('/move_base/goal_status', Int8)
-    speak_to_user(f"{location} arrived")
+    #goal_status=rospy.wait_for_message('/move_base/goal_status', Int8)
+    while not cancel:
+        try:
+            goal_status=rospy.wait_for_message('/move_base/goal_status', Int8,timeout=1)
+            break
+        except:
+            pass
+        #rospy.sleep(0.1)
+    if cancel:
+        return
+    if isinstance(location, tuple):
+        rounded_location = tuple(round(coord, 1) for coord in location)
+        speak_to_user(f"Reached the location at {rounded_location}")
+    else:
+        speak_to_user(f"{location} arrived")
     return
 
 
     
 def exploration():
+    global cancel
+    if cancel:
+        return
+    
     speak_to_user("exploration module not implemented yet")
     return
 
 def describe(object:str)->str:
+    global cancel
+    if cancel:
+        return "User cancelled the task"
     '''
     Provides a description of a specified object.
 
@@ -163,22 +203,26 @@ def describe(object:str)->str:
     Returns:
     str: A string describing the object.
     '''  
-    event = threading.Event()
     description=''
     describe_environment_publisher.publish(String(object))
-    def describe_object_callback(data):
-        nonlocal description
-        print(data.data)
-        event.set()
-        description=data.data
 
-    rospy.Subscriber('/describe_environment_complete', String, describe_object_callback)
-    event.wait()
+    while True:
+        try:
+            goal_status=rospy.wait_for_message('/describe_object_complete', String,timeout=1)
+            description=goal_status.data
+            break
+        except:
+            pass
+        #rospy.sleep(0.1)
     #print(f"Describing environment in {direction} direction")
     return description
 
 
 def find_object_3d_from_command(object:str)->list[int]:
+    global cancel
+    print("cencel is ",cancel)
+    if cancel:
+        return (-1,-1)
     '''
     Finds the 3D position of a specified object using lidar.
 
@@ -194,25 +238,31 @@ def find_object_3d_from_command(object:str)->list[int]:
     print(f"Finding 3D position of {object}")
     find_object_3d_publisher.publish(String(object))
 
-    event = threading.Event()
     result = []
-
-    def find_object_3d_callback(msg):
-        nonlocal result
-        #result = [int(x) for x in msg.data.split(',')]
-        result = msg#round(msg.data, 1)
-        event.set()
-    rospy.Subscriber('/best_goal', PoseStamped, find_object_3d_callback)
-
+    #result=rospy.wait_for_message('/best_goal', PoseStamped)
     
-    # Wait for the callback to be triggered
-    event.wait()
-    x=result.pose.position.x
-    y=result.pose.position.y
+    while cancel==False:
+        try:
+            result=rospy.wait_for_message('/best_goal', PoseStamped,timeout=1)
+            #rospy.sleep(1)
+            #result=[]
+            print("got result")
+            x=result.pose.position.x
+            y=result.pose.position.y
+            break
+        except:
+            print("timeout")
+            pass
+        ##rospy.sleep(0.1)
+    if cancel:
+        return (-1,-1)
     return (x,y)
     
 
 def look_around_and_find_related_objects(description:bool=False,find:str=None)->tuple[str,list[tuple[str,int]]]:
+    global cancel
+    if cancel:
+        return "User cancelled the task",[]
     '''
     This module will use 360 camera to make observation of the surrounding,
     optionallly, it can provide a description of the surrounding if the argument 'description' is True, 
@@ -234,43 +284,58 @@ def look_around_and_find_related_objects(description:bool=False,find:str=None)->
     return description_str,objects
 
 def read(object:str)->str:
+    global cancel
+    if cancel:
+        return "User cancelled the task"
     '''
     This module captures the text on a requested object, to help the user understand the text on th object.
     This module will return a string that contains the text on the object.
     '''
-    event = threading.Event()
     description=''
     describe_environment_publisher.publish(String(object))
-    def read_callback(data):
-        nonlocal description
-        print(data.data)
-        event.set()
-        description=data.data
 
-    rospy.Subscriber('/read_complete', String, read_callback)
-    event.wait()
+    while not cancel:
+        try:
+            goal_status=rospy.wait_for_message('/read_complete', String,timeout=1)
+            description=goal_status.data
+            break
+        except:
+            pass
+        #rospy.sleep(0.1)
+    
     #print(f"Describing environment in {direction} direction")
     return description
 def describe_environment(direction:str)->str:
+    global cancel
+    if cancel:
+        return "User cancelled the task"
     '''
     This module describe the entire environment captured using your front/side/back camera to the user.
     This module will return a string that describes the environment.
     '''
-    event = threading.Event()
     description=''
     describe_environment_publisher.publish(String(direction))
     def describe_environment_callback(data):
         nonlocal description
         print(data.data)
-        event.set()
         description=data.data
 
-    rospy.Subscriber('/describe_environment_complete', String, describe_environment_callback)
-    event.wait()
+    while not cancel:
+        try:
+            goal_status=rospy.wait_for_message('/describe_environment_complete', String,timeout=1)
+            description=goal_status.data
+            break
+        except:
+            pass
+        #rospy.sleep(0.1)
+    
     #print(f"Describing environment in {direction} direction")
     return description
 
 def get_map_info(location: str) -> str:
+    global cancel
+    if cancel:
+        return []
     '''
     Retrieves information about a specified location from the map.
 
@@ -300,6 +365,9 @@ def get_map_info(location: str) -> str:
     #map_info_list.append(example_map_info_entry)
     return map_info_list  # f"Map info for {location} is as following: it is a good place, have many things"
 def wait_for_condition(condition:str)->None:
+    global cancel
+    if cancel:
+        return
     '''
     This module allows you to keep checking using camera whether a condition is met, you will not move untill a condition is met.
     '''
@@ -309,6 +377,9 @@ def wait_for_condition(condition:str)->None:
     pass
 
 def check_condition(condition:str)->bool:
+    global cancel
+    if cancel:
+        return False
     '''
     This module will check if a condition is met, and return the condition.
     This module returns a boolean value, True if the condition is met, False if the condition is not met.
@@ -317,6 +388,9 @@ def check_condition(condition:str)->bool:
     return True
 
 def speak_to_public(message:str)->None:
+    global cancel
+    if cancel:
+        return
     '''
     This module will allow you to speak to the public, you must get approval from the user before using this module.
     '''
@@ -327,6 +401,9 @@ def speak_to_public(message:str)->None:
     pass
 
 def speak_to_user(message:str)->None:
+    global cancel
+    if cancel:
+        return
     '''
     This module will allow you to speak to the user.
     '''
@@ -334,6 +411,7 @@ def speak_to_user(message:str)->None:
     message=String(message)
     
     speak_to_user_publisher.publish(message)
+    print("Published")
     pass
 
 def switch_mode(mode:str)->int:
@@ -347,6 +425,12 @@ def switch_mode(mode:str)->int:
     This module returns an integer, 0 if the mode is switched successfully, 1 if the mode is not switched successfully.
     '''
     print(f"Switching mode to {mode}")
+    if mode=="guide":
+        switch_mode_publisher.publish(0)
+    elif mode=="avoid":
+        switch_mode_publisher.publish(1)
+    elif mode=="sleep":
+        switch_mode_publisher.publish(2)
     return 0
 
 def set_current_task(task:str)->None:

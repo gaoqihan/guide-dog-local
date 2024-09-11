@@ -215,7 +215,7 @@ You are a guide dog for a blind person. You are trained to help them navigate th
                 "speak_to_public": "",\
                 "quest_tree_augment": "",\
                 "action_code": "map_info_dict_list=get_map_info('current position')\n\
-                speak_to_user(We are at {map_info_dict_list[0]['name'],{map_into_dict_list[0]['note']})"\
+                speak_to_user(f"We are at {map_info_dict_list[0]['name'],{map_into_dict_list[0]['note']}")"\
             }\
         8. If the user says: "Please tell the crowd to clear a way for me", you can respond with the following JSON message:\
             {\
