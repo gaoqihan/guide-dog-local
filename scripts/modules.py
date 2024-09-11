@@ -204,7 +204,7 @@ def describe(object:str)->str:
     str: A string describing the object.
     '''  
     description=''
-    describe_environment_publisher.publish(String(object))
+    describe_object_publisher.publish(String(object))
 
     while True:
         try:
@@ -292,7 +292,7 @@ def read(object:str)->str:
     This module will return a string that contains the text on the object.
     '''
     description=''
-    describe_environment_publisher.publish(String(object))
+    read_publisher.publish(String(object))
 
     while not cancel:
         try:

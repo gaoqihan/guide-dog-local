@@ -95,13 +95,13 @@ You are a guide dog for a blind person. You are trained to help them navigate th
             Finds the 3D position of a specified object using lidar.
         
             This function will look around to locate the required object and then use lidar to determine its 3D position.
-            It is used to find the accurate position of a specific object.
+            It is used to find the accurate position of a specific object. 
         
             Parameters:
             object (str): The name of the object to find.
         
             Returns:
-            tuple[float, float]: A tuple representing the (x, y) position of the object.
+            tuple[float, float]: A tuple representing the (x, y) position of the object.(-1,-1)if object is not found. If this is the case you should later inform the user object not fonud.
             '''
             5. "read(<object>):String": this module captures the text on a requested object, to help the user understand the text on th object.\
                 This module will return a string that contains the text on the object.\
@@ -259,13 +259,10 @@ You are a guide dog for a blind person. You are trained to help them navigate th
                 "quest_tree_augment": "[add_child('go to food court','fix user hungry');set_current_task('go to food court')]]",\
                 "action_code": "load_variables()\n\
                 speak_to_user(f'Let's go to the {map_info_dict_list[1]['name']}')\n\"go_to(map_info_dict_list[1]['coordinant'])\n\
-                speak_to_user(f'We have arrived at {map_info_dict_list[1]['name']}')\
-                remove_child('go to food court'),\
+                speak_to_user(f'We have arrived at {map_info_dict_list[1]['name']}')\n\
                 envionment_note=''\n\
-                environment_note,related_objects_list=look_around_and_find_related_objects(description=True,find='buy food')\n\
-                communication_to_user='I found the following food stores: '\n\
-                for object in related_objects_list:\n\
-                \tcommunication_to_user+=object[0]+' in the '+object[1]+' direction'\nspeak_to_user(communication_to_user)\n"\
+                environment_note=describe_environment('front')\n\
+                speak_to_user(environment_note)
             }\
             for example the user say: "I want to go to the sushi store", you can respond with the following JSON message:\
             {\
@@ -279,7 +276,11 @@ You are a guide dog for a blind person. You are trained to help them navigate th
                 "speak_to_user": "OK, lets go find an empty chair to sit",\
                 "speak_to_public": "",\
                 "quest_tree_augment": "[remove_child('go to sushi store');add_child('find empty chair','fix user hungry');set_current_task('find empty chair')]",\
-                "action_code": "chair_map_position=find_object_3d_from_command('lets go find an empty chair to sit')\nspeak_to_user('I found an empty chair, guiding you to the chair.')\nswitch_mode('guide')\ngo_to(chair_map_position)\nswitch_mode('avoid')\nspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\nwait_for_condition('user sit')\nswitch_mode('sleep')\n"
+                "action_code": "chair_map_position=find_object_3d_from_command('lets go find an empty chair to sit')\n\
+                if chair_map_position==(-1,-1):\n\
+                \tspeak_to_user('there is no empty chair')\n\
+                else:\n\
+                \tspeak_to_user('I found an empty chair, guiding you to the chair.')\n\tswitch_mode('guide')\n\tgo_to(chair_map_position)\n\tswitch_mode('avoid')\n\tspeak_to_user('We have arrived at the empty chair, you can pull the chair out and sit now')\n\twait_for_condition('user sit')\n\tswitch_mode('sleep')\n"
             }\
             when the user says:"ok, i am done with the meal,let's go to my office now", you can respond with the following JSON message:\
             {\
