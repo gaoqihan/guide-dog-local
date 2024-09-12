@@ -30,11 +30,15 @@ class Settings(BaseSettings):
 load_dotenv()
 
 settings = Settings()
-
+def speak_to_user_callback(data):
+    conversation.say_things(data.data)
+    
+    
 if __name__ == "__main__":
     #mode="testing"
     mode="onboard"
     rospy.init_node('chat_backend_client_node')
+    rospy.Subscriber('/speak_to_user', String, speak_to_user_callback)
 
 
         
@@ -61,12 +65,7 @@ if __name__ == "__main__":
         ),
     )
     print("Starting conversation. Press Ctrl+C to exit.")
-    ### TBD cahnge this to listen to topic /ButtonPressed
-    def speak_to_user_callback(data):
-        conversation.say_things(data.data)
-    
-    rospy.Subscriber('/speak_to_user', String, speak_to_user_callback)
-    
+
     
     #looping
     if mode=="testing":

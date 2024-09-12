@@ -40,16 +40,3 @@ class TurnBasedConversationPlus(TurnBasedConversation):
     def say_things(self,string:str):
         self.output_device.send_audio(self.synthesizer.synthesize(string))
         pass
-    
-    def call_module(self,module_command):
-        print("TBD call module developing")
-        pass
-    
-    def send_to_public(self,message):
-        print("TBD send to public developing")
-        pass
-
-    def quest_tree_augment(self,quest_tree_command):
-        print("TBD task tree augment developing")
-        pass
-    
